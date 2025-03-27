@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <LangVersion>Latest</LangVersion>
+        <RootNamespace>HolisticWare.Core.Serialization.JSON</RootNamespace>
+        <!--
+        If moved to separate PropertyGroup - UI is cleared?!?!
+        -->
+        <PackOnBuild>true</PackOnBuild>
+        <PackageId>HolisticWare.Core.Serialization.JSON</PackageId>
+        <Title>
+            HolisticWare.Core.Serialization.JSON
+        </Title>
+        <summary>
+            NuGet updating APIs. Tools for nuget package updates API for productivity.
+        </summary>
+        <Description>
+            NuGet updating APIs. Tools for nuget package updates API for productivity.
+        </Description>
+        <Owners>HolisticWare, moljac</Owners>
+        <Authors>HolisticWare, moljac</Authors>
+        <Copyright>2022</Copyright>
+  </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" />
+        <PackageReference Include="Roslynator.Analyzers" />
+        <PackageReference Include="Roslynator.Formatting.Analyzers" />
+        <PackageReference Include="AsyncFixer" />
+        <PackageReference Include="Microsoft.CodeAnalysis.BannedApiAnalyzers" />
+        <PackageReference Include="Microsoft.CodeAnalysis.PublicApiAnalyzers" />
+        <PackageReference Include="Roslynator.CodeAnalysis.Analyzers" />
+
+        <PackageReference Include="System.Text.Json" />
+        <PackageReference Include="Newtonsoft.Json" />
+        <PackageReference Include="Jil" />
+        <!--
+        <PackageReference Include="HolisticWare.SpanJson" />
+        -->
+        <PackageReference Include="Utf8Json" />
+    </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Core.Serialization.JSON\" />
+    <None Remove="Core.Serialization.JSON\Options\" />
+    <None Remove="Core.IO\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core.Serialization.JSON\" />
+    <Folder Include="Core.Serialization.JSON\Options\" />
+    <Folder Include="Core.IO\" />
+  </ItemGroup>
+</Project>

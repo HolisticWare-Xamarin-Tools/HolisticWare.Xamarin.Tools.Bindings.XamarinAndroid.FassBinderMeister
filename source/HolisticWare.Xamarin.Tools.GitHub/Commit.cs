@@ -24,8 +24,8 @@ namespace HolisticWare.Xamarin.Tools.GitHub
 
         public
                                         Commit
-                                            (
-                                            )
+                                        (
+                                        )
         {
         }
     }
