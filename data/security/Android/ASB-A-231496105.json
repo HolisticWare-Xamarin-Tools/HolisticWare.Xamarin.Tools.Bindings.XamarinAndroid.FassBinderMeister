@@ -1,0 +1,121 @@
+{
+  "id": "ASB-A-231496105",
+  "summary": "Investigate how Phone Services is breaking through AppOps restrictions",
+  "details": "In sOpAllowSystemRestrictionBypass of AppOpsManager.java, there is a possible leak of location information due to a missing permission check. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20240"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-12-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/61c2d0291bd5b9b39a1d7db7454b3d7c630e7de9"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/cad40dc9b13596b85df5a41b25fc07c0854dc65a"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/530407c903c3b06c6bd0a423937531f95eb116ae"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Wifi/+/bb99dc7a9e5c6b14f672ee12c6e4093803b8b915"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-12-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/61c2d0291bd5b9b39a1d7db7454b3d7c630e7de9",
+          "https://android.googlesource.com/platform/frameworks/base/+/cad40dc9b13596b85df5a41b25fc07c0854dc65a",
+          "https://android.googlesource.com/platform/frameworks/base/+/530407c903c3b06c6bd0a423937531f95eb116ae"
+        ],
+        "spl": "2022-12-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-231496105.json"
+      }
+    },
+    {
+      "package": {
+        "name": "platform/packages/modules/Wifi",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-12-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Wifi/+/bb99dc7a9e5c6b14f672ee12c6e4093803b8b915"
+        ],
+        "spl": "2022-12-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-231496105.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

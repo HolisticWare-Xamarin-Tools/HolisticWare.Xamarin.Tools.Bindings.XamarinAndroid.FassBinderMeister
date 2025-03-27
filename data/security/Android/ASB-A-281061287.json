@@ -1,0 +1,86 @@
+{
+  "id": "ASB-A-281061287",
+  "summary": "PDoS using addDynamicShortcuts to bypass app-level shortcut limits",
+  "details": "In forceReplaceShortcutInner of ShortcutPackage.java, there is a possible way to register unlimited packages due to a missing bounds check. This could lead to local denial of service which results in a boot loop with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-40075"
+  ],
+  "modified": "2024-05-14T14:40:19Z",
+  "published": "2023-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-12-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/ae768fbb9975fdab267f525831cb52f485ab0ecc"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-12-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-12-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-12-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-12-01"
+            },
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2023-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13",
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/3215e73e36aa0463429226b5743ce24badf31227"
+        ],
+        "spl": "2023-12-01",
+        "types": [
+          "DoS"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-281061287.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

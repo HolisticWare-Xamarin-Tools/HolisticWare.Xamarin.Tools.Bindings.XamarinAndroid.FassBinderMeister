@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-271680254",
+  "summary": "Vulnerability: 3 vulnerabilities affecting GitOnBorg::android::platform::external::freetype",
+  "details": "In ft_open_face_internal of ftobjs.c, there is a possible out of bounds read due to a missing bounds check. This could lead to remote information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-27405"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/external/freetype/+/d45f0e49ab54065eb72d92aa3cc5f2152b0910b7"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/external/freetype",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-07-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-07-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-07-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-07-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/external/freetype/+/30908e2ef7a9f117cb747111ea5b7cda795764eb"
+        ],
+        "spl": "2023-07-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-271680254.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

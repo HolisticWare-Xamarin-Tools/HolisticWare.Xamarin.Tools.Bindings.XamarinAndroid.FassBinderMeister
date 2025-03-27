@@ -1,0 +1,84 @@
+{
+  "id": "ASB-A-275339978",
+  "summary": "setWapiPassphrase#WifiNetworkSuggestion$Builder call allows overflowing the system configuration file that leads to the permanent DoS",
+  "details": "In validatePassword of WifiConfigurationUtil.java, there is a possible way to get the device into a boot loop due to improper input validation. This could lead to local denial of service with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21252"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-10-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-10-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Wifi/+/044ab0684153c4effb9f4fda47df43ccdc77bda8"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Wifi/+/50b08ee30e04d185e5ae97a5f717d436fd5a90f3"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Wifi",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-10-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-10-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-10-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-10-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Wifi/+/8f1ed4e94a6cb5392700fb8da4b564b7a548ed94",
+          "https://android.googlesource.com/platform/packages/modules/Wifi/+/61ba0e1b72469dbf4b4b196341b8d95cd2d3a4d4"
+        ],
+        "spl": "2023-10-01",
+        "types": [
+          "DoS"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-275339978.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

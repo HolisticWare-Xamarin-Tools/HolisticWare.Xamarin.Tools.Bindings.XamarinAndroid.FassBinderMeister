@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-193790350",
+  "summary": "C2FuzzerGsmDec: Tag-mismatch in android::C2AllocationIon::Impl::~Impl",
+  "details": "In ~Impl of C2AllocatorIon.cpp, there is a possible out of bounds read due to a use after free. This could lead to remote information disclosure with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2021-39803"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+/4b93da988f02c652f3429661f9a9859fa1c1ea0a"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/av",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2022-04-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-04-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-04-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-04-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11",
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/av/+/4b93da988f02c652f3429661f9a9859fa1c1ea0a"
+        ],
+        "spl": "2022-04-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-193790350.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

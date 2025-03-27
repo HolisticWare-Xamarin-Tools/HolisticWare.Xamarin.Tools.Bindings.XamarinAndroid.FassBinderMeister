@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-154913391",
+  "summary": "InputMethodManagerService provides an implicit mutable PendingIntent to 3Ps",
+  "details": "In startInputUncheckedLocked of InputMethodManagerService.java, there is a possible permission bypass due to an unsafe PendingIntent. This could lead to local information disclosure with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2020-0500"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-09-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-09-01"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":unknown:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2022-09-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-09-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "spl": "2022-09-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "Moderate"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-154913391.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

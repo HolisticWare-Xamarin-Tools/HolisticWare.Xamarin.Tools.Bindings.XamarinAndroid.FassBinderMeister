@@ -1,0 +1,80 @@
+{
+  "id": "ASB-A-274617156",
+  "summary": "[Bluetooth][GATT] Use-After-Free in function `gatt_process_prep_write_rsp`.",
+  "details": "In gatt_process_prep_write_rsp of gatt_cl.cc, there is a possible privilege escalation due to a use after free. This could lead to remote (proximal/adjacent) code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-35658"
+  ],
+  "modified": "2024-05-14T14:40:16Z",
+  "published": "2023-09-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-09-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/d03a3020de69143b1fe8129d75e55f14951dd192"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Bluetooth",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-09-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-09-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-09-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-09-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/5691da36ac2660ce6bef5e66ab6bfc44b2a5234c",
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/2dea9ee94cb226e1d4512605ecd3eb6c10a23469"
+        ],
+        "spl": "2023-09-01",
+        "types": [
+          "RCE"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-274617156.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

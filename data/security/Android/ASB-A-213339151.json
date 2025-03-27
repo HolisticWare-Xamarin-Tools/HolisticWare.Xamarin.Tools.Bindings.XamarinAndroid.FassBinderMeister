@@ -1,0 +1,73 @@
+{
+  "id": "ASB-A-213339151",
+  "summary": "[GKI] Revert mprotect optimization from android12-5.10 branch",
+  "details": "In change_pte_range of mprotect.c , there is a possible way to make a shared mmap writable due to a permissions bypass. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-39802"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/ac4488815518c"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/b44e46bb047d1"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/67d075d23a8bc"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/6f9aba5a20b84"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2022-04-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/ac4488815518c",
+          "https://android.googlesource.com/kernel/common/+/b44e46bb047d1",
+          "https://android.googlesource.com/kernel/common/+/67d075d23a8bc",
+          "https://android.googlesource.com/kernel/common/+/6f9aba5a20b84"
+        ],
+        "spl": "2022-04-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-213339151.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

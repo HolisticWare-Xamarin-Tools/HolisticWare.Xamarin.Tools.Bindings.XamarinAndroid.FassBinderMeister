@@ -1,0 +1,65 @@
+{
+  "id": "ASB-A-158570769",
+  "summary": "(Un)protected Broadcast Vulnerability in Android 9.0 and higher",
+  "details": "In applyPolicy of PackageManagerService.java, there is possible arbitrary command execution as System due to an unenforced protected-broadcast. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2020-0391"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2020-09-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2020-09-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/860fd4b6a2a4fe5d681bc07f2567fdc84f0d1580"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2020-09-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2020-09-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "9",
+        "10"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/860fd4b6a2a4fe5d681bc07f2567fdc84f0d1580"
+        ],
+        "spl": "2020-09-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-158570769.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

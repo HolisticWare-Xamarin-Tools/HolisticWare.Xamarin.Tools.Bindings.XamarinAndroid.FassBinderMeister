@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-273260090",
+  "summary": "CallRedirection Service does not unbind when null returned from Service, which may lead to BAL",
+  "details": "In onNullBinding of CallRedirectionProcessor.java, there is a possible long lived connection due to improper input validation. This could lead to local escalation of privilege and background activity launches with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21138"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-06-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-06-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/services/Telecomm/+/33368bad6f837f1084da8e71917653817e714b1d"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/services/Telecomm",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-06-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-06-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-06-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-06-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/services/Telecomm/+/f1c110b91cce8b13e7355edd42a980f89a32747f"
+        ],
+        "spl": "2023-06-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-273260090.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

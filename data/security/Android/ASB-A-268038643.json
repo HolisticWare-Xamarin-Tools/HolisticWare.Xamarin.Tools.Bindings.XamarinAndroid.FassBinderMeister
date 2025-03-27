@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-268038643",
+  "summary": "App Pin security issue exposes payment cards in Google Wallet to unauthorized payments",
+  "details": "In onHostEmulationData of HostEmulationManager.java, there is a possible way for a general purpose NFC reader to read the full card number and expiry details when the device is in locked screen mode due to a logic error in the code. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-35671"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-09-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-09-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Nfc/+/745632835f3d97513a9c2a96e56e1dc06c4e4176"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/apps/Nfc",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-09-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-09-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-09-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-09-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/apps/Nfc/+/6cb53d963d376b97963120a4d2c7df961789e428"
+        ],
+        "spl": "2023-09-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-268038643.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

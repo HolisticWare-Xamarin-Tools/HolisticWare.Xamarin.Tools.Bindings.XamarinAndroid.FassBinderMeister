@@ -1,0 +1,63 @@
+{
+  "id": "ASB-A-222023189",
+  "summary": "Linux kernel vulnerability advisory ",
+  "details": "In composite_setup of composite.c, there is a possible out of bounds write due to a missing bounds check. This could lead to local escalation of privilege when connecting a malicious USB device with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-25258"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-06-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-06-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/22ec100472854"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/c7732dbce590e"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2022-06-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/22ec100472854",
+          "https://android.googlesource.com/kernel/common/+/c7732dbce590e"
+        ],
+        "spl": "2022-06-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-222023189.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

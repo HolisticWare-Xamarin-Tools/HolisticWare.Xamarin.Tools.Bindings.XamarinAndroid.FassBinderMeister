@@ -1,0 +1,86 @@
+{
+  "id": "ASB-A-291500341",
+  "summary": "Crash in com.google.android.bluetooth - HWAddressSanitizer: tag-mismatch on address 0x004a0315be00 at pc 0x007319f2eda8",
+  "details": "In callback_thread_event of com_android_bluetooth_btservice_AdapterService.cpp, there is a possible memory corruption due to a use after free. This could lead to remote (proximal/adjacent) code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-40088"
+  ],
+  "modified": "2024-05-14T14:40:16Z",
+  "published": "2023-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-12-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/5bfd817719fcf55cbb3476e6b5539a3db4c437fc"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Bluetooth",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-12-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-12-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-12-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-12-01"
+            },
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2023-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13",
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/7a5c71c32d382c0e14083f0d093ae4f5420968ff"
+        ],
+        "spl": "2023-12-01",
+        "types": [
+          "RCE"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-291500341.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

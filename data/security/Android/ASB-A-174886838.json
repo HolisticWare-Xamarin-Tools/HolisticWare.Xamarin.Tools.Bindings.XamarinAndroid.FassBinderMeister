@@ -1,0 +1,72 @@
+{
+  "id": "ASB-A-174886838",
+  "summary": "Bluetooth security notice:  (VU#799380.8 TLP:AMBER)",
+  "details": "In smp_process_pairing_public_key of smp_act.cc, there is a possible interception of Bluetooth pairing from an on-path attacker due to improperly used crypto. This could lead to remote escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2020-26558"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-06-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-06-01"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":unknown:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2021-06-05"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-06-05"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-06-05"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-06-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.1",
+        "9",
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "spl": "2021-06-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-174886838.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

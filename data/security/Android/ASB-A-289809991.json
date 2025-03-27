@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-289809991",
+  "summary": "Another Background starting activities restrictions bypass in CallRedirectionService",
+  "details": "In onBindingDied of CallRedirectionProcessor.java, there is a possible permission bypass due to a logic error in the code. This could lead to local escalation of privilege and background activity launch with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-40130"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-10-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-10-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/services/Telecomm/+/5b335401d1c8de7d1c85f4a0cf353f7f9fc30218"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/services/Telecomm",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-10-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-10-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-10-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-10-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/services/Telecomm/+/29b52e3cd027da2d8644450a4dee3a7d95dc0043"
+        ],
+        "spl": "2023-10-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-289809991.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-275626001",
+  "summary": "[Bluetooth][A2DP] a2dp_vendor_opus_decoder_decode_packet OOB Access",
+  "details": "In a2dp_vendor_opus_decoder_decode_packet of a2dp_vendor_opus_decoder.cc, there is a possible out of bounds write due to a heap buffer overflow. This could lead to paired device escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-40078"
+  ],
+  "modified": "2024-05-14T14:40:16Z",
+  "published": "2023-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-12-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/6cdf985a664476659b84d8c74698cb3dfa28f82b"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Bluetooth",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2023-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/c7b6e560eda0e43dcac6ca8298fe01ee0762f508"
+        ],
+        "spl": "2023-12-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-275626001.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

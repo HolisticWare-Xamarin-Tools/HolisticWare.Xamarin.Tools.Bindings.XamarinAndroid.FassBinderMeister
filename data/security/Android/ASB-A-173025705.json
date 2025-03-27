@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-173025705",
+  "summary": "NavigationModeController of System UI uses an unsafe PendingIntent",
+  "details": "In showNotification of NavigationModeController.java, there is a possible confused deputy due to an unsafe PendingIntent. This could lead to local escalation of privilege that allows actions performed as the System UI with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0932"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-11-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-11-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/20c6f8d5945f78c14405b283a326dcfd611f9049"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-11-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/20c6f8d5945f78c14405b283a326dcfd611f9049"
+        ],
+        "spl": "2021-11-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-173025705.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

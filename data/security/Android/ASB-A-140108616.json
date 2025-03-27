@@ -1,0 +1,183 @@
+{
+  "id": "ASB-A-140108616",
+  "summary": "Bypassing background execution restrictions",
+  "details": "In postNotification of ServiceRecord.java, there is a possible bypass of foreground process restrictions due to an uncaught exception. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2020-0108"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2020-08-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2020-08-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/45a53e6cb8d3276126cfe0e717ad7ed486d39b24"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/0a163302b0288cdc4d9ca5e04398386ef8e1ec6b"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/36f182159ffae1f14a1733a3bb1334cdd9d44742"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/services/Car/+/d2d8933e006efc251fda52e6807807d107f2ca12"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2020-08-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2020-08-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2020-08-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.1",
+        "9",
+        "10"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/45a53e6cb8d3276126cfe0e717ad7ed486d39b24",
+          "https://android.googlesource.com/platform/frameworks/base/+/0a163302b0288cdc4d9ca5e04398386ef8e1ec6b"
+        ],
+        "spl": "2020-08-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-140108616.json"
+      }
+    },
+    {
+      "package": {
+        "name": "platform/packages/apps/Settings",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2020-08-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2020-08-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2020-08-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.1",
+        "9",
+        "10"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/36f182159ffae1f14a1733a3bb1334cdd9d44742"
+        ],
+        "spl": "2020-08-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-140108616.json"
+      }
+    },
+    {
+      "package": {
+        "name": "platform/packages/services/Car",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2020-08-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2020-08-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2020-08-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.1",
+        "9",
+        "10"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/services/Car/+/d2d8933e006efc251fda52e6807807d107f2ca12"
+        ],
+        "spl": "2020-08-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-140108616.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

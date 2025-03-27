@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-200041882",
+  "summary": "Android_R with Keymaster1.x have AES CBC/ECB/GCM NoPaddingCipherTest Failure for Block sizes 128/192/256",
+  "details": "In update of km_compat.cpp, there is a possible loss of potentially sensitive data due to a logic error in the code. This could lead to local denial of service with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0958"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-12-01"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":unknown:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-12-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2021-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12"
+      ],
+      "ecosystem_specific": {
+        "spl": "2021-12-01",
+        "types": [
+          "DoS"
+        ],
+        "severity": "Moderate"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-200041882.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

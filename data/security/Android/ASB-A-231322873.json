@@ -1,0 +1,86 @@
+{
+  "id": "ASB-A-231322873",
+  "summary": "Foreground Activity Started via FullScreenIntent",
+  "details": "In handleFullScreenIntent of StatusBarNotificationActivityStarter.java, there is a possible bypass of the restriction of starting activity from background due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20415"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-10-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-10-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/9194bce0d58093bbb0aa77c6050bb9a15d9dbc2a"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2022-10-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-10-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-10-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-10-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2022-10-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/9194bce0d58093bbb0aa77c6050bb9a15d9dbc2a"
+        ],
+        "spl": "2022-10-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "Moderate"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-231322873.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

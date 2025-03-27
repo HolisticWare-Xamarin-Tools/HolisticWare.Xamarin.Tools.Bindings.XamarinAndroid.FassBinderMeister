@@ -1,0 +1,65 @@
+{
+  "id": "ASB-A-177238342",
+  "summary": "Missing RECEIVE_SMS permission in AOSP Bluetooth app",
+  "details": "In processInboundMessage of MceStateMachine.java, there is a possible SMS disclosure due to a missing permission check. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0588"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Bluetooth/+/bbf60925044c9ea7613c4264dea20c6c12246118"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/apps/Bluetooth",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2021-07-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-07-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.1",
+        "9"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/apps/Bluetooth/+/bbf60925044c9ea7613c4264dea20c6c12246118"
+        ],
+        "spl": "2021-07-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-177238342.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

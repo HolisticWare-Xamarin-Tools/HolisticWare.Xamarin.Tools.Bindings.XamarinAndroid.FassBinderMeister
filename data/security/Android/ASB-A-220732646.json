@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-220732646",
+  "summary": "[Crafted HFP Client Packet Causes Out-of-bounds Read in Bluetooth]",
+  "details": "In AT_SKIP_REST of bta_hf_client_at.cc, there is a possible out of bounds read due to an incorrect bounds check. This could lead to remote information disclosure in the Bluetooth stack with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20224"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/system/bt/+/7c21b56b7880579965e95cf24c2ab49326a3f2b9"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/system/bt",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2022-07-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-07-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-07-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-07-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11",
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/system/bt/+/7c21b56b7880579965e95cf24c2ab49326a3f2b9"
+        ],
+        "spl": "2022-07-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-220732646.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

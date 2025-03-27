@@ -1,0 +1,84 @@
+{
+  "id": "ASB-A-171221090",
+  "summary": "[DeviceChooserActivity Could be Overlaid to Trick User Into Associating a Rogue Companion Device]",
+  "details": "In onCreate of DeviceChooserActivity.java, there is a possible way to bypass user consent when pairing a Bluetooth device due to a tapjacking/overlay attack. This could lead to local escalation of privilege and pairing malicious devices with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0433"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/75419418cfd2f47439d0f65418f4a771cc58d14b"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/8e4928820e972a00342c00cf67e8795a094e6e68"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2021-04-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-04-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-04-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-04-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.1",
+        "9",
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/75419418cfd2f47439d0f65418f4a771cc58d14b",
+          "https://android.googlesource.com/platform/frameworks/base/+/8e4928820e972a00342c00cf67e8795a094e6e68"
+        ],
+        "spl": "2021-04-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-171221090.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

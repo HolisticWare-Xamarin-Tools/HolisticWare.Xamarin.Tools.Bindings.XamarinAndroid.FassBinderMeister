@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-252762941",
+  "summary": "[2 of 2] App can access microphone in a foreground service without declaring microphone foreground service type as an attribute of <service> component. [ 2. android.telecom.CallScreeningService service continuously recording]",
+  "details": "In onNullBinding of CallScreeningServiceHelper.java, there is a possible way to record audio without showing a privacy indicator due to a permissions bypass. This could lead to local escalation of privilege with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21083"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/services/Telecomm/+/8b32e15214910a310e5f7391e739ac1043af3bf9"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/services/Telecomm",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-04-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-04-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-04-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-04-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/services/Telecomm/+/c915b8782b0d4a2c944fa55afbb48a262c93ee97"
+        ],
+        "spl": "2023-04-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-252762941.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

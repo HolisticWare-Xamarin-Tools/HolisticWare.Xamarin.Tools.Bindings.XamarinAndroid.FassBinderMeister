@@ -1,0 +1,80 @@
+{
+  "id": "ASB-A-279428283",
+  "summary": "BG-FGS restrictions bypass via set app-owned IIntentSender to contentIntent.mTarget and call `PendingIntent.send` with callbacked whitelistToken",
+  "details": "In sendIntentSender of ActivityManagerService.java, there is a possible background activity launch due to a logic error. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2024-0025"
+  ],
+  "modified": "2024-05-14T14:40:16Z",
+  "published": "2024-05-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2024-05-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/d49662560e366dbf69bf7d59d00e73905d03e6d5"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2024-05-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2024-05-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2024-05-01"
+            },
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2024-05-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L",
+        "13",
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/3ced332ad690e5b308b02db5c9cdd9ca30368c4a",
+          "https://android.googlesource.com/platform/frameworks/base/+/2938b381ca54cf3a62273f51211c1e03d0f1c30a"
+        ],
+        "spl": "2024-05-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-279428283.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

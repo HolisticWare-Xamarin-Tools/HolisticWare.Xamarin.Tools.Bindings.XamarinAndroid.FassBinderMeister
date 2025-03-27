@@ -1,0 +1,121 @@
+{
+  "id": "ASB-A-283006437",
+  "summary": "Non-runtime permission flags aren't preserved upon APK updates",
+  "details": "In restorePermissionState of PermissionManagerServiceImpl.java, there is a possible way for an app to keep permissions that should be revoked due to incorrect permission flags cleared during an update. This could lead to local escalation of privilege with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21270"
+  ],
+  "modified": "2024-05-14T14:40:16Z",
+  "published": "2023-08-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-08-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/e7ccba6da2c3febeb449c172c1d8091f7a35193d"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-08-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-08-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-08-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/75d59e2c837fe80573d005d614b5605f049d670b"
+        ],
+        "spl": "2023-08-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-283006437.json"
+      }
+    },
+    {
+      "package": {
+        "name": "platform/packages/apps/Launcher3",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-08-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-08-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-08-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/apps/Launcher3/+/6f7a11861f9158061e90d0645c4d891f29cdfc59"
+        ],
+        "spl": "2023-08-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-283006437.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

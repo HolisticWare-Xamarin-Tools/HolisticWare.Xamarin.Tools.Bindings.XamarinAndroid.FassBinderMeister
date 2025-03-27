@@ -1,0 +1,65 @@
+{
+  "id": "ASB-A-178725766",
+  "summary": "OOB Write in NFC stack when handling MIFARE Classic TLVs",
+  "details": "In rw_mfc_handle_read_op of rw_mfc.cc, there is a possible out of bounds write due to a missing bounds check. This could lead to remote code execution via a malicious NFC packet with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0430"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/system/nfc/+/02f7762236890ce05385ccd19bfaf9821cba9e2e"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/system/nfc",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-04-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-04-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/system/nfc/+/02f7762236890ce05385ccd19bfaf9821cba9e2e"
+        ],
+        "spl": "2021-04-01",
+        "types": [
+          "RCE"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-178725766.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

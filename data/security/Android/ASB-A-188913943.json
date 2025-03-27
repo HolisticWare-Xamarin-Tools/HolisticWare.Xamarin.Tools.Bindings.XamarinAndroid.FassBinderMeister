@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-188913943",
+  "summary": "Android 12 Beta- Denial Of Service",
+  "details": "In ellipsize of Layout.java, there is a possible ANR due to improper input validation. This could lead to local denial of service with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0687"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-09-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-09-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/ed0c637a311d98426ff29cecd96aa429b53544dc"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2021-09-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-09-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-09-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-09-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.1",
+        "9",
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/ed0c637a311d98426ff29cecd96aa429b53544dc"
+        ],
+        "spl": "2021-09-01",
+        "types": [
+          "DoS"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-188913943.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

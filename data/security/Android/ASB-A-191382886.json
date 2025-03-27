@@ -1,0 +1,97 @@
+{
+  "id": "ASB-A-191382886",
+  "summary": "App can stop vpn profile of other apps and can reset always on vpn package without requiring any permission.",
+  "details": "In stopVpnProfile of Vpn.java, there is a possible VPN profile reset due to a permissions bypass. This could lead to local escalation of privilege CONTROL_ALWAYS_ON_VPN with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0649"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-11-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-11-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/591e345fbc0ccb6815e27ccff1a0ae9d02002a90"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Connectivity/+/a9ef5a9252761c73959cfb16a838d3c61fee77f3"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-11-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/591e345fbc0ccb6815e27ccff1a0ae9d02002a90"
+        ],
+        "spl": "2021-11-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-191382886.json"
+      }
+    },
+    {
+      "package": {
+        "name": "platform/packages/modules/Connectivity",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-11-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Connectivity/+/a9ef5a9252761c73959cfb16a838d3c61fee77f3"
+        ],
+        "spl": "2021-11-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-191382886.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

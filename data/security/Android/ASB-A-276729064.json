@@ -1,0 +1,87 @@
+{
+  "id": "ASB-A-276729064",
+  "summary": "ADP Grant - Detecting photos belonging to other users by posting a messaging style notification with remote input history items",
+  "details": "In visitUris of Notification.java, there is a possible bypass of user profile boundaries due to a missing permission check. This could lead to local escalation of privilege with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21244"
+  ],
+  "modified": "2024-05-14T14:40:19Z",
+  "published": "2023-10-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-10-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/3a448067ac9ebdf669951e90678c2daa592a81d3"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/20aedba4998373addc2befcc455a118585559fef"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/5a3d0c131175d923cf35c7beb3ee77a9e6485dad"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-10-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-10-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-10-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-10-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/43b1711332763788c7abf05c3baa931296c45bbb"
+        ],
+        "spl": "2023-10-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-276729064.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

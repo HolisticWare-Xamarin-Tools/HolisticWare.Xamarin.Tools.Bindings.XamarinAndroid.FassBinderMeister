@@ -1,0 +1,73 @@
+{
+  "id": "ASB-A-299123598",
+  "summary": "Linux Kernel Race Condition leads to UAF in Unix Domain Socket and causes LPE in Android",
+  "details": "In unix_stream_sendpage of af_unix.c, there is a possible use-after-free due to a race condition. This could lead to local escalation of privilege in the kernel with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-4622"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2024-05-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2024-05-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/e6ed59127c865"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/790c2f9d15b59"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/84d3e59750bbd"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/d39fc9b94dc07"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2024-05-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/e6ed59127c865",
+          "https://android.googlesource.com/kernel/common/+/790c2f9d15b59",
+          "https://android.googlesource.com/kernel/common/+/84d3e59750bbd",
+          "https://android.googlesource.com/kernel/common/+/d39fc9b94dc07"
+        ],
+        "spl": "2024-05-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-299123598.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

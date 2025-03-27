@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-180643802",
+  "summary": "avc_enc_fuzzer: Invalid-free in Codec::encodeFrames",
+  "details": "In encodeFrames of avc_enc_fuzzer.cpp, there is a possible out of bounds write due to a double free. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0601"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/external/libavc/+/986b1ff02fbf8551e92e6ba9cf64d5fca47957af"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/external/libavc",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2021-07-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-07-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-07-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-07-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.1",
+        "9",
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/external/libavc/+/986b1ff02fbf8551e92e6ba9cf64d5fca47957af"
+        ],
+        "spl": "2021-07-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-180643802.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-213464034",
+  "summary": "net/packet: rx_owner_map depends on pg_vec",
+  "details": "In packet_set_ring of af_packet.c, there is a possible memory corruption due to a use after free. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-22600"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-05-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-05-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/27fc5a7c6972bd73ac0cc0cf811ec2ecb989014f"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2022-05-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/27fc5a7c6972bd73ac0cc0cf811ec2ecb989014f"
+        ],
+        "spl": "2022-05-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "Moderate"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-213464034.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

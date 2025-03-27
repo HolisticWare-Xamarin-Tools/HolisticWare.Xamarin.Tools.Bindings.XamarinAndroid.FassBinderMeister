@@ -1,0 +1,86 @@
+{
+  "id": "ASB-A-174238784",
+  "summary": "Issue 27856: libavc:avc_dec_fuzzer: Heap-buffer-overflow in ih264d_parse_pslice",
+  "details": "In ih264d_parse_pslice of ih264d_parse_pslice.c, there is a possible out of bounds write due to a heap buffer overflow. This could lead to remote code execution with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0325"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-02-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-02-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/external/libavc/+/fd7e28588f149c1683c4f7a0a1c543f51b1cd41a"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/external/libavc",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0:0"
+            },
+            {
+              "fixed": "8.0:2021-02-01"
+            },
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2021-02-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-02-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-02-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-02-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.0",
+        "8.1",
+        "9",
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/external/libavc/+/fd7e28588f149c1683c4f7a0a1c543f51b1cd41a"
+        ],
+        "spl": "2021-02-01",
+        "types": [
+          "RCE"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-174238784.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

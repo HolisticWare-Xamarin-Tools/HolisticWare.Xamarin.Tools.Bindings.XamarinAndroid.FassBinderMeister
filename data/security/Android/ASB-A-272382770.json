@@ -1,0 +1,86 @@
+{
+  "id": "ASB-A-272382770",
+  "summary": "mdns_service_fuzzer: Heap-use-after-free in MDnsSdListener::Monitor::run",
+  "details": "In run of MDnsSdListener.cpp, there is a possible memory corruption due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-40084"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-12-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/system/netd/+/1b8bddd96b2efd4074b6d4eee377b62077c031bd"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/system/netd",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-12-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-12-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-12-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-12-01"
+            },
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2023-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13",
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/system/netd/+/9c0c15f80cffb98b36284dd169a2e62e059dbbe3"
+        ],
+        "spl": "2023-12-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-272382770.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

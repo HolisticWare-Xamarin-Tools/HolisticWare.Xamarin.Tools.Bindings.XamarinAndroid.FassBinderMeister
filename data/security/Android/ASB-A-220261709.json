@@ -1,0 +1,73 @@
+{
+  "id": "ASB-A-220261709",
+  "summary": "Linux kernel vulnerability advisory",
+  "details": "In dev_config of inode.c, there is a possible arbitrary code execution due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-24958"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-06-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-06-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/ff0000fe82f45"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/590a98d5d1086"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/c13159a588818"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/fdd64084e4055"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2022-06-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/ff0000fe82f45",
+          "https://android.googlesource.com/kernel/common/+/590a98d5d1086",
+          "https://android.googlesource.com/kernel/common/+/c13159a588818",
+          "https://android.googlesource.com/kernel/common/+/fdd64084e4055"
+        ],
+        "spl": "2022-06-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-220261709.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

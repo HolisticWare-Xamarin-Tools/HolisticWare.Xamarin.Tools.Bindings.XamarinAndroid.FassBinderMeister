@@ -1,0 +1,143 @@
+{
+  "id": "ASB-A-266580022",
+  "summary": "Local persistent denial of service when setting PackageManager.GET_SIGNATURES",
+  "details": "In multiple locations, there is a possible way to crash multiple system services due to resource exhaustion. This could lead to local denial of service with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21253"
+  ],
+  "modified": "2024-05-14T14:40:17Z",
+  "published": "2023-10-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-10-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/84df68840b6f2407146e722ebd95a7d8bc6e3529"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/tools/apksig/+/039f815895f62c9f8af23df66622b66246f3f61e"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/tools/apksig/+/41d882324288085fd32ae0bb70dc85f5fd0e2be7"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-10-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-10-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-10-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-10-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/6f6ee8a55f37c2b8c0df041b2bd53ec928764597"
+        ],
+        "spl": "2023-10-01",
+        "types": [
+          "DoS"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-266580022.json"
+      }
+    },
+    {
+      "package": {
+        "name": "platform/tools/apksig",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-10-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-10-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-10-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-10-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/tools/apksig/+/6be64b9339c1dad28abf75b53d3866fd42f320d6"
+        ],
+        "spl": "2023-10-01",
+        "types": [
+          "DoS"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-266580022.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

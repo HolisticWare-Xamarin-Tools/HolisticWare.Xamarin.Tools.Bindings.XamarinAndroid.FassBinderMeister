@@ -1,0 +1,65 @@
+{
+  "id": "ASB-A-213850092",
+  "summary": "C2FuzzerVorbisDec: Heap-use-after-free in android::C2DmaBufAllocation::unmap",
+  "details": "In various functions of C2DmaBufAllocator.cpp, there is a possible memory corruption due to a use after free. This could lead to remote information disclosure with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20228"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+/a12f8a065c081b7aa2d7aaa1df79498c282c53d2"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/av",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-07-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-07-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/av/+/a12f8a065c081b7aa2d7aaa1df79498c282c53d2"
+        ],
+        "spl": "2022-07-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-213850092.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

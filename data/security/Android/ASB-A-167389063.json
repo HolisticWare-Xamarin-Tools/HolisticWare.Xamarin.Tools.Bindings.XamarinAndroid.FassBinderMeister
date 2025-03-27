@@ -1,0 +1,144 @@
+{
+  "id": "ASB-A-167389063",
+  "summary": "OOB in pacprocessor's libpac-chromium could lead to possible RCE",
+  "details": "In Factory::CreateStrictFunctionMap of factory.cc, there is a possible out of bounds write due to an incorrect bounds check. This could lead to remote code execution in an unprivileged process with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0515"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/external/chromium-libpac/+/438381db24b83e6fde76a4ca2c6a9fa91f822265"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/external/v8/+/2dc3777900fe5faa900be436bf42dd55353d189a"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/external/v8/+/6e1e26aaeffbc3b396c54fc4f3d2605b9d4cab67"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/external/chromium-libpac",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2021-07-05"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-07-05"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-07-05"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-07-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.1",
+        "9",
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/external/chromium-libpac/+/438381db24b83e6fde76a4ca2c6a9fa91f822265"
+        ],
+        "spl": "2021-07-05",
+        "types": [
+          "RCE"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-167389063.json"
+      }
+    },
+    {
+      "package": {
+        "name": "platform/external/v8",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2021-07-05"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-07-05"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-07-05"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-07-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.1",
+        "9",
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/external/v8/+/2dc3777900fe5faa900be436bf42dd55353d189a",
+          "https://android.googlesource.com/platform/external/v8/+/6e1e26aaeffbc3b396c54fc4f3d2605b9d4cab67"
+        ],
+        "spl": "2021-07-05",
+        "types": [
+          "RCE"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-167389063.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

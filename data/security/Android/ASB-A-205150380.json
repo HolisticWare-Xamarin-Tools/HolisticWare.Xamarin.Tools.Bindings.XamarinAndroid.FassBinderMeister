@@ -1,0 +1,65 @@
+{
+  "id": "ASB-A-205150380",
+  "summary": "Set Credential Manager App without User Consent",
+  "details": "In onCreate of RequestManageCredentials.java, there is a possible way for a third party app to install certificates without user approval due to a tapjacking/overlay attack. This could lead to local escalation of privilege with User execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2021-39702"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-03-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-03-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/db9333baac7c609a32536a2f8d66233132306aab"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/apps/Settings",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-03-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-03-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/db9333baac7c609a32536a2f8d66233132306aab"
+        ],
+        "spl": "2022-03-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-205150380.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

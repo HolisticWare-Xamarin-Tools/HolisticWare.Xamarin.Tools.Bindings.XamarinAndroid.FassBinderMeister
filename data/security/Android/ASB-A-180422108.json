@@ -1,0 +1,84 @@
+{
+  "id": "ASB-A-180422108",
+  "summary": "Tapjacking vulnerability when pairing Bluetooth devices with NFC",
+  "details": "In onCreate of ConfirmConnectActivity.java, there is a possible pairing of untrusted Bluetooth devices due to a tapjacking/overlay attack. This could lead to local escalation of privilege with User execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0598"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-09-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-09-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Nfc/+/e08056f8eafdc98e2db27b9936e61225b5e1ea7d"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Nfc/+/fd697c56b7795a7f0cf50cac55db71a60d5bd357"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/apps/Nfc",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2021-09-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-09-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-09-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-09-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.1",
+        "9",
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/apps/Nfc/+/e08056f8eafdc98e2db27b9936e61225b5e1ea7d",
+          "https://android.googlesource.com/platform/packages/apps/Nfc/+/fd697c56b7795a7f0cf50cac55db71a60d5bd357"
+        ],
+        "spl": "2021-09-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-180422108.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

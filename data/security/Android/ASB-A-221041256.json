@@ -1,0 +1,104 @@
+{
+  "id": "ASB-A-221041256",
+  "summary": "Privilege Escalation in com.android.settings.DefaultRingtonePreference and com.android.dialer.app.settings.DefaultRingtonePreference",
+  "details": "In onSaveRingtone of DefaultRingtonePreference.java, there is a possible inappropriate file read due to improper input validation. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20353"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-08-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-08-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/a9da6b809944018ef4c1a8eaecdec9cdecf47e15"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/1de10d24aa8d6a54b991299091877b18ee696d73"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/9bd1402e5aa758f2843154f395b5a5dfa91c1dca"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/e4c22580c9a66a3d5523782c2daa707531210227"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/ec3ae8bb178b8b5fb54572632e77984f9bfd5b86"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/40fbcf333f09a92d6499cf94d67c60c3a03c9a33"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/apps/Settings",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2022-08-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-08-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-08-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-08-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11",
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/a9da6b809944018ef4c1a8eaecdec9cdecf47e15",
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/1de10d24aa8d6a54b991299091877b18ee696d73",
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/9bd1402e5aa758f2843154f395b5a5dfa91c1dca",
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/e4c22580c9a66a3d5523782c2daa707531210227",
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/ec3ae8bb178b8b5fb54572632e77984f9bfd5b86",
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/40fbcf333f09a92d6499cf94d67c60c3a03c9a33"
+        ],
+        "spl": "2022-08-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-221041256.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-158221622",
+  "summary": "AOSP dnsmasq 2.5.1 heap overflow",
+  "details": "In do_rfc1035_name of util.c, there is a possible out of bounds write due to a missing bounds check. This could lead to remote code execution when processing a malicious DNS server response with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2017-14491"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-03-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-03-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/external/dnsmasq/+/10ba39da6b98043989b1a604f533d5b647ee7bda"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/external/dnsmasq",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2021-03-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-03-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-03-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-03-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.1",
+        "9",
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/external/dnsmasq/+/10ba39da6b98043989b1a604f533d5b647ee7bda"
+        ],
+        "spl": "2021-03-01",
+        "types": [
+          "RCE"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-158221622.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

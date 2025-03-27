@@ -1,0 +1,86 @@
+{
+  "id": "ASB-A-275895309",
+  "summary": "[Bluetooth][BTIF] transcodeQ*ToFloat OOB Write",
+  "details": "In transcodeQ*ToFloat of btif_avrcp_audio_track.cc, there is a possible out of bounds write due to a missing bounds check. This could lead to paired device escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-40087"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-12-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/243fdf1c0d53bda9e829b4bec9f7c2a824b4d3d1"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Bluetooth",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-12-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-12-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-12-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-12-01"
+            },
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2023-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13",
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/d66257f2a982558ac64a855c6106ac0391e41bbd"
+        ],
+        "spl": "2023-12-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-275895309.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

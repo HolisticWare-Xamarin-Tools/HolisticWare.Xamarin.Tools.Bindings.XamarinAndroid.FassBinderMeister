@@ -1,0 +1,65 @@
+{
+  "id": "ASB-A-184018316",
+  "summary": "[POC]xt_qtaguid kernel module has UAF vulnerability due to improper locking since 2011",
+  "details": "In get_sock_stat of xt_qtaguid.c, there is a possible out of bounds read due to a use after free. This could lead to local information disclosure with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0695"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-09-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-09-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/2398e650c58a6f4877dafce649188290f6e3b4f5"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "oc-mr1:0"
+            },
+            {
+              "fixed": "oc-mr1:2021-09-05"
+            },
+            {
+              "introduced": "pi:0"
+            },
+            {
+              "fixed": "pi:2021-09-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "oc-mr1",
+        "pi"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/2398e650c58a6f4877dafce649188290f6e3b4f5"
+        ],
+        "spl": "2021-09-05",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-184018316.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

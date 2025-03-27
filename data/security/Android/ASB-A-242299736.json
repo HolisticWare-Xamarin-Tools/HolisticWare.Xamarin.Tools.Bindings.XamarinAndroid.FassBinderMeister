@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-242299736",
+  "summary": "Vulnerability: Package zlib affected by CVE-2022-37434 affecting GitOnBorg::android::platform::external::zlib",
+  "details": "In inflate of inflate.c, there is a possible out of bounds write due to a heap buffer overflow. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-20966"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-03-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-03-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/external/zli+/1c4806afd7ae034aa9f86df35d4341a0b175a90a"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/external/zlib",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-03-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-03-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-03-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-03-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/external/zlib/+/e754d32adb747041bdd27bd971d27fa6bc44108d"
+        ],
+        "spl": "2023-03-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-242299736.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

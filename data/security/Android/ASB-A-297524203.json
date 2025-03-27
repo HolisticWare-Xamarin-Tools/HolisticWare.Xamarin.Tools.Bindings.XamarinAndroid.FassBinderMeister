@@ -1,0 +1,86 @@
+{
+  "id": "ASB-A-297524203",
+  "summary": "[Out of Bounds Write in attp_build_read_by_type_value_cmd in att_protocol.cc in libbt-stack]",
+  "details": "In attp_build_read_by_type_value_cmd of att_protocol.cc , there is a possible out of bounds write due to improper input validation. This could lead to remote code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2024-0031"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2024-02-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2024-02-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/de53890aaca2ae08b3ee2d6e3fd25f702fdfa661"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Bluetooth",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2024-02-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2024-02-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2024-02-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2024-02-01"
+            },
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2024-02-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13",
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/140c41e3553bc59fe97e3f5ee96c64e2251971e2"
+        ],
+        "spl": "2024-02-01",
+        "types": [
+          "RCE"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-297524203.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

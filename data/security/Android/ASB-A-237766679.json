@@ -1,0 +1,82 @@
+{
+  "id": "ASB-A-237766679",
+  "summary": "[INTERNAL SHADOW][Samsung] Instrumentation abusing apps from the Play Store",
+  "details": "In startInstrumentation of ActivityManagerService.java, there is a possible way to keep the foreground service alive while the app is in the background. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21089"
+  ],
+  "modified": "2024-05-14T14:40:21Z",
+  "published": "2023-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/2d20bee73d9ba1c56d49041991e141ba3fe68c5a"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-04-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-04-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-04-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-04-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/c6e7343756f510c878e53390ea82e5936b9c16d8",
+          "https://android.googlesource.com/platform/frameworks/base/+/ea3970887683fb18a8180b425cc14102396ee00d",
+          "https://android.googlesource.com/platform/frameworks/base/+/f94e4d8e90c1a1a8655f5384f3d0c428951394ab",
+          "https://android.googlesource.com/platform/frameworks/base/+/62ae15335bfa14dbd583d1c2019f36641b3c4499"
+        ],
+        "spl": "2023-04-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-237766679.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

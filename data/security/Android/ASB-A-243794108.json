@@ -1,0 +1,89 @@
+{
+  "id": "ASB-A-243794108",
+  "summary": "[EoP: Modify intent-flags on a immutable PendingIntent which could grant additional permission]",
+  "details": "In getPendingIntentLaunchFlags of ActivityOptions.java, there is a possible elevation of privilege due to a confused deputy with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-20918"
+  ],
+  "modified": "2024-05-14T14:40:16Z",
+  "published": "2023-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/16c604aa7c253ce5cf075368a258c0b21386160d"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/8418e3a017428683d173c0c82b0eb02d5b923a4e"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/51051de4eb40bb502db448084a83fd6cbfb7d3cf"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-07-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-07-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-07-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-07-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/c4d3106e347922610f8c554de3ae238175ed393e",
+          "https://android.googlesource.com/platform/frameworks/base/+/48acfb0f1d71912e757cadd505901471c1df4d4c",
+          "https://android.googlesource.com/platform/frameworks/base/+/c62d2e1021a030f4f0ae5fcfc8fe8e0875fa669f"
+        ],
+        "spl": "2023-07-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-243794108.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

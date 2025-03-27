@@ -1,0 +1,83 @@
+{
+  "id": "ASB-A-174737879",
+  "summary": "Android Vomit Report",
+  "details": "In multiple locations, there is a possible out of bounds write due to a race condition. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2020-29374"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-08-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-08-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/a308c71bf1e6e"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/52d1e606ee733"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/1a0cf26323c8"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/09854ba94c6a"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/be068f2903"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/17839856fd588"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2023-08-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/a308c71bf1e6e",
+          "https://android.googlesource.com/kernel/common/+/52d1e606ee733",
+          "https://android.googlesource.com/kernel/common/+/1a0cf26323c8",
+          "https://android.googlesource.com/kernel/common/+/09854ba94c6a",
+          "https://android.googlesource.com/kernel/common/+/be068f2903",
+          "https://android.googlesource.com/kernel/common/+/17839856fd588"
+        ],
+        "spl": "2023-08-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-174737879.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-197647956",
+  "summary": "ActivityThread.mGetProviderKeys should be ArrayMap",
+  "details": "In ActivityThread.java, there is a possible way to collide the content provider's authorities.  This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0799"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-11-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-11-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/9a4e52fa566169d5dd78d672fa3be048de9b0041"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2021-11-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/9a4e52fa566169d5dd78d672fa3be048de9b0041"
+        ],
+        "spl": "2021-11-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-197647956.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-174749461",
+  "summary": "Don't allow apps from background user to modify suggestions of foreground user",
+  "details": "In various methods of WifiNetworkSuggestionsManager.java, there is a possible modification of suggested networks due to a missing permission check. This could lead to local escalation of privilege by a background user on the same device with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0390"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-03-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-03-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/opt/net/wifi/+/23685b8604571ec623e539f4f9c66db65c9dde81"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/opt/net/wifi",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2021-03-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-03-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-03-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-03-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.1",
+        "9",
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/opt/net/wifi/+/23685b8604571ec623e539f4f9c66db65c9dde81"
+        ],
+        "spl": "2021-03-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-174749461.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

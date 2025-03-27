@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-257443065",
+  "summary": "[2023-01-30] Android Enterprise (AFW) allows non-approved apks to be sideloaded into the work profile",
+  "details": "In updateSettingsInternalLI of InstallPackageHelper.java, there is a possible way to sideload an app in the work profile due to a missing permission check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21257"
+  ],
+  "modified": "2024-05-14T14:40:16Z",
+  "published": "2023-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/1aec7feaf07e6d4568ca75d18158445dbeac10f6"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-07-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/febe3918020a94b2af48ade98eb6a49cdd4a3bdf"
+        ],
+        "spl": "2023-07-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-257443065.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

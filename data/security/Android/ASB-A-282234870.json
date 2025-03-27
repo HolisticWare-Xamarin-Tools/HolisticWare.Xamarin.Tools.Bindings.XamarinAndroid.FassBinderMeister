@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-282234870",
+  "summary": "[Bug 2/2] Potential oob write due to missing bounds check in LeAudioBroadcasterImpl::CreateAudioBroadcast() of bluetooth stack",
+  "details": "In CreateAudioBroadcast of broadcaster.cc, there is a possible out of bounds write due to a missing bounds check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-45776"
+  ],
+  "modified": "2024-05-14T14:40:16Z",
+  "published": "2023-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-12-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/8e3b3fc918b3ea77754c6d82ab0f09cce81e145b"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Bluetooth",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2023-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/5f9059acdfed500ea5ff4b159795280d5fa2ecbf"
+        ],
+        "spl": "2023-12-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-282234870.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

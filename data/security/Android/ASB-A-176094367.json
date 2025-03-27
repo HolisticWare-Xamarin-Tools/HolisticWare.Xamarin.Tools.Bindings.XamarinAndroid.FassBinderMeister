@@ -1,0 +1,72 @@
+{
+  "id": "ASB-A-176094367",
+  "summary": "[PermissionController#ReviewPermissionsActivity could be Overlaid to Trick User into Granting Permission to Apps with API level lower than 23]",
+  "details": "In onCreate of ReviewPermissionsActivity.java, there is a possible way to grant permissions for a separate app with API level < 23 due to a tapjacking/overlay attack. This could lead to local escalation of privilege with User execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20442"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-12-01"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":unknown:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2022-12-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-12-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-12-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11",
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "spl": "2022-12-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-176094367.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

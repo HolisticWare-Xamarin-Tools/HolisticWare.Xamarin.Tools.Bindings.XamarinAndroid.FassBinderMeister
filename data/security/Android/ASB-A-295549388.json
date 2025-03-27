@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-295549388",
+  "summary": "Enable NotificationListenerService in the work profile via setDeviceProfile#AssociationRequest.DEVICE_PROFILE_WATCH",
+  "details": "In multiple locations, there is a possible notification listener grant to an app running in the work profile due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2024-0043"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2024-05-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2024-05-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Permission/+/8141e8f4dd77b9f8fb485e23ddf028c57fcd4fca"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Permission",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2024-05-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2024-05-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2024-05-01"
+            },
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2024-05-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L",
+        "13",
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Permission/+/47a06cd49981d3fbe58158e9252f0a825aa109cd"
+        ],
+        "spl": "2024-05-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-295549388.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

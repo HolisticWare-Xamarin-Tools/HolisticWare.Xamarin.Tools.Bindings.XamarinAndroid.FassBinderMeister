@@ -1,0 +1,70 @@
+{
+  "id": "ASB-A-222473855",
+  "summary": "App can read location requests of other users without requiring INTERACT_ACROSS_USERS permission.",
+  "details": "In addProviderRequestListener of LocationManagerService.java, there is a possible way to learn which packages request location information due to a missing permission check. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20352"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-08-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-08-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/f796ac71c3c583139d7cfe8cc70fd1f2f4e251a0"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/ec3a20c2b28906247e7d13ae4af17c701dd5ee21"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-08-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-08-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/f796ac71c3c583139d7cfe8cc70fd1f2f4e251a0",
+          "https://android.googlesource.com/platform/frameworks/base/+/ec3a20c2b28906247e7d13ae4af17c701dd5ee21"
+        ],
+        "spl": "2022-08-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-222473855.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

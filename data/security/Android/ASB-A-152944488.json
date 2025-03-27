@@ -1,0 +1,97 @@
+{
+  "id": "ASB-A-152944488",
+  "summary": "Copy screenshot only if user consent approved",
+  "details": "In RunInternal of dumpstate.cpp, there is a possible user consent bypass due to an uncaught exception. This could lead to local information disclosure of bug report data with System execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2020-0382"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2020-09-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2020-09-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/a898d1198050c40b73f1467ea5adaf881f3d7961"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/90f8249030e02080e937eeed12fc8c8c692bbc64"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2020-09-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/a898d1198050c40b73f1467ea5adaf881f3d7961"
+        ],
+        "spl": "2020-09-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-152944488.json"
+      }
+    },
+    {
+      "package": {
+        "name": "platform/frameworks/native",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2020-09-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/native/+/90f8249030e02080e937eeed12fc8c8c692bbc64"
+        ],
+        "spl": "2020-09-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-152944488.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

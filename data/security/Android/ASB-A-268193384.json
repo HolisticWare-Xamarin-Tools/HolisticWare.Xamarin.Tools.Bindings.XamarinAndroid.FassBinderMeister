@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-268193384",
+  "summary": "ADP Grant - Starting arbitrary Activities via SettingsHomepageActivity on behalf of uid 1000",
+  "details": "In SettingsHomepageActivity.java, there is a possible way to launch arbitrary activities via Settings due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21256"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/62fc1d269f5e754fc8f00b6167d79c3933b4c1f4"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/apps/Settings",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-07-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/5310c406400f71c2c540f23903a6766fbf58db1a"
+        ],
+        "spl": "2023-07-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-268193384.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

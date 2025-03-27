@@ -1,0 +1,72 @@
+{
+  "id": "ASB-A-269271098",
+  "summary": "[Out of Bounds Read in SUBGRAPH in convertSubgraphFromHAL in ShimConverter.cpp in libneuralnetworks_shim_static]",
+  "details": "In convertSubgraphFromHAL of ShimConverter.cpp, there is a possible out of bounds read due to a missing bounds check. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-40085"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2024-01-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2024-01-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/NeuralNetworks/+/ed6ee1f7eca7b33160e36ac6d730a9ef395ca4f1"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/NeuralNetworks",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2024-01-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2024-01-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2024-01-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/NeuralNetworks/+/75ee704ed5feafc05440138863c618fddbf3b8be"
+        ],
+        "spl": "2024-01-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-269271098.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

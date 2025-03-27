@@ -1,0 +1,65 @@
+{
+  "id": "ASB-A-298635078",
+  "summary": "Requesting and setting notfication access on behalf of another user profile by CompanionDeviceManagerService#requestNotificationAccess",
+  "details": "In multiple functions of CompanionDeviceManagerService.java, there is a possible launch NotificationAccessConfirmationActivity of another user profile due to improper input validation. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2024-0022"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2024-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2024-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/bdf1cce569c9700965ff6baee8efd3fb1e8269e8"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2024-04-01"
+            },
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2024-04-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "13",
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/38e1e9fb0357a3d0af5551cac83ad9b0b1fd0be2"
+        ],
+        "spl": "2024-04-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-298635078.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

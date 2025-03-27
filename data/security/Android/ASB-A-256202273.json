@@ -1,0 +1,84 @@
+{
+  "id": "ASB-A-256202273",
+  "summary": "\"adb install -d\" downgrades system apps",
+  "details": "In verifyReplacingVersionCode of InstallPackageHelper.java, there is a possible way to downgrade system apps below system image version due to a logic error in the code. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21116"
+  ],
+  "modified": "2024-05-14T14:40:16Z",
+  "published": "2023-05-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-05-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/08e20afd61c8a038503506e58bcf932360f19127"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/eecb1f05c7af24dc50fbc8425a8f64ee61ac2a05"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-05-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-05-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-05-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-05-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/a4484d7f1be1fa413258fe18644d61f85611f586",
+          "https://android.googlesource.com/platform/frameworks/base/+/ceeca68b8c3f0ed8427b0212f63defe2f075146e"
+        ],
+        "spl": "2023-05-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "Moderate"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-256202273.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,89 @@
+{
+  "id": "ASB-A-243130512",
+  "summary": "Side-channel: theft the existed phone numbers or emails on your device",
+  "details": "In multiple functions of RunningTasks.java, there is a possible privilege escalation due to a missing privilege check. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-20909"
+  ],
+  "modified": "2024-05-14T14:40:17Z",
+  "published": "2023-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/401e782b244bf84fd5aab371f60c2e52d6226fb3"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/27bc3e93eb0f767a98af38e4c454187c31472428"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/6c24ca2e9523a7278660c6328dee00195d210a9d"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-04-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-04-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-04-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-04-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/401e782b244bf84fd5aab371f60c2e52d6226fb3",
+          "https://android.googlesource.com/platform/frameworks/base/+/27bc3e93eb0f767a98af38e4c454187c31472428",
+          "https://android.googlesource.com/platform/frameworks/base/+/5ba72200f6a66b5da48c9c3abd103a73aea1ef95"
+        ],
+        "spl": "2023-04-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-243130512.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

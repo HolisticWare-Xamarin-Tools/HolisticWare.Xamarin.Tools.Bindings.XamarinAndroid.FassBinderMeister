@@ -1,0 +1,106 @@
+{
+  "id": "ASB-A-294854926",
+  "summary": "Keystroke-injection into Pixel 4a (5G) over unauthenticated Bluetooth(All Pixel devices are impacted)",
+  "details": "In multiple locations, there is a possible way to inject keystrokes due to improper input validation. This could lead to remote (proximal/adjacent) escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-45866"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-12-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/25a7d9aaceea0f7d6cb4ae3da5aa66efb0bc7db8"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/f4e439c22354f0aa868a982bc88bcc9de3bc37f7"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/a99edb35d6c044dbd607a74b88102bf2f36d5ef5"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/9194524a92e0f5859caeab1ff487d21d9b513d0b"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/5673b3c6bbe8c6c9edb8afb5e9499dc3a41d3943"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Bluetooth",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-12-05"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-12-05"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-12-05"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-12-05"
+            },
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2023-12-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13",
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/1f08f638c91169df84a43b6cd4e04d1aa3a5d554",
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/47e6e149f1d4dc557e10033ac9b147d24b37bea9",
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/c11c2a2bead295edf18cecf682255a498e84133a",
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/916b6d3899908ed09f81be131e48933637e4c9ef",
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/7db69a79091ec0199ddbac2a7b8cf1e0b57631d9"
+        ],
+        "spl": "2023-12-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-294854926.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

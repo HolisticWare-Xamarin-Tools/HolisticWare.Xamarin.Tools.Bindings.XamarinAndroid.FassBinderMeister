@@ -1,0 +1,72 @@
+{
+  "id": "ASB-A-177561690",
+  "summary": "Mock locations may be reported in E911 situations",
+  "details": "In injectBestLocation and handleUpdateLocation of GnssLocationProvider.java, there is a possible incorrect reporting of location data to emergency services due to improper input validation. This could lead to incorrect reporting of location data to emergency services with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0400"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/95602e325ae1ee9cf383db38cb0a8d47567618dc"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-04-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-04-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-04-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "9",
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/95602e325ae1ee9cf383db38cb0a8d47567618dc"
+        ],
+        "spl": "2021-04-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-177561690.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,66 @@
+{
+  "id": "ASB-A-250574778",
+  "summary": "TOFU behavior for enterprise in Android 13 sends the credential first then prompts TOFU, allowing for trivial credential theft.",
+  "details": "In processMessageImpl of ClientModeImpl.java, there is a possible credential disclosure in the TOFU flow due to a logic error in the code. This could lead to remote escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-20965"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-08-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-08-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Wifi/+/88a8a98934215f591605028e200b6eca8f7cc45a"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Wifi/+/bd318b9772759546509f6fdb8648366099dd65ad"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Wifi/+/0d3cb609b0851ea9e5745cc6101e57c2e5e739f2"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Wifi",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-08-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Wifi/+/759170c6692e2fa5fc55dfae09b99581613c30f2"
+        ],
+        "spl": "2023-08-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-250574778.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

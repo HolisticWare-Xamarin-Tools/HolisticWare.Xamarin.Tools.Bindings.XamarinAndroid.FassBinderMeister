@@ -1,0 +1,111 @@
+{
+  "id": "ASB-A-230494481",
+  "summary": "[OOB write in L2CAP Bluetooth stack]",
+  "details": "In l2cble_process_sig_cmd of l2c_ble.cc, there is a possible out of bounds write due to a missing bounds check. This could lead to remote code execution over Bluetooth with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20345"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-08-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-08-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/system/bt/+/e0dd01b536919d5407968eae341b72fa10ec0b7d"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/0b7fe01dd050fa4155b1cd802d901b4c9eccdfef"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Bluetooth",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-08-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-08-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/0b7fe01dd050fa4155b1cd802d901b4c9eccdfef"
+        ],
+        "spl": "2022-08-01",
+        "types": [
+          "RCE"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-230494481.json"
+      }
+    },
+    {
+      "package": {
+        "name": "platform/system/bt",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-08-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-08-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/system/bt/+/e0dd01b536919d5407968eae341b72fa10ec0b7d"
+        ],
+        "spl": "2022-08-01",
+        "types": [
+          "RCE"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-230494481.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

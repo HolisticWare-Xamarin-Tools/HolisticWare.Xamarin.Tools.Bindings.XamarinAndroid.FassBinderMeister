@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-170407229",
+  "summary": "grpc_graph_fuzzer: Tag-mismatch in android::automotive::computepipe::graph::GrpcGraph::dispatchGraphTerminationMess",
+  "details": "In dispatchGraphTerminationMessage() of packages/services/Car/computepipe/runner/graph/StreamSetObserver.cpp, there is a possible use after free due to a race condition. This could lead to local escalation of privilege with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0303"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-01-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-01-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/services/Car/+/768c8bfbe91db71e11eae2c57fb678ff2a5bf15e"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/services/Car",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-01-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/services/Car/+/768c8bfbe91db71e11eae2c57fb678ff2a5bf15e"
+        ],
+        "spl": "2021-01-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-170407229.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

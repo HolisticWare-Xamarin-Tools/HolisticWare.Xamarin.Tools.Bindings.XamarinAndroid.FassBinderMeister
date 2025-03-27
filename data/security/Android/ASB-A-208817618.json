@@ -1,0 +1,65 @@
+{
+  "id": "ASB-A-208817618",
+  "summary": "PendingIntent hijack vulnerability in SipAccountRegistry.java",
+  "details": "In sendSipAccountsRemovedNotification of SipAccountRegistry.java, there is a possible permission bypass due to an unsafe PendingIntent. This could lead to local escalation of privilege with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-39709"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-03-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-03-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/services/Telephony/+/7c9b65a4de4540a50a16781e9f55857544453bc2"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/services/Telephony",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-03-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-03-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/services/Telephony/+/7c9b65a4de4540a50a16781e9f55857544453bc2"
+        ],
+        "spl": "2022-03-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-208817618.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

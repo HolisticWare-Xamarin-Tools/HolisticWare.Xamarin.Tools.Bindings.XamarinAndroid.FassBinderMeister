@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-195338390",
+  "summary": "EoP in PackageManager",
+  "details": "In createOrUpdate of Permission.java, there is a possible way to gain internal permissions due to a missing permission check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0923"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-11-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-11-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/63777c0ca8e194ab3efc51905e83b07ea0d351a9"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2021-11-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/63777c0ca8e194ab3efc51905e83b07ea0d351a9"
+        ],
+        "spl": "2021-11-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-195338390.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

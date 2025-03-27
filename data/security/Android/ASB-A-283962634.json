@@ -1,0 +1,153 @@
+{
+  "id": "ASB-A-283962634",
+  "summary": "Bypass access restriction on Android/data/directory and all subdirectories",
+  "details": "In queryChildDocuments of FileSystemProvider.java, there is a possible way to request access to directories that should be hidden due to improper input validation. This could lead to local escalation of privilege with User execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2024-0032"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2024-02-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2024-02-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/providers/DownloadProvider/+/5acd646e0cf63e2c9c0862da7e03531ef0074394"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/4af5db76f25348849252e0b8a08f4a517ef842b7"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2024-02-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2024-02-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2024-02-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2024-02-01"
+            },
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2024-02-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13",
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/7f5667bfafbd9b1b4d59c2cb15f9a3e07a559318"
+        ],
+        "spl": "2024-02-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-283962634.json"
+      }
+    },
+    {
+      "package": {
+        "name": "platform/packages/providers/DownloadProvider",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2024-02-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2024-02-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2024-02-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2024-02-01"
+            },
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2024-02-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13",
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/providers/DownloadProvider/+/eae60a878ffa8eafe854539d3381ceba9ff6cca4"
+        ],
+        "spl": "2024-02-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-283962634.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-275418191",
+  "summary": "NuMediaExtractor::readSampleData() SEGV failures",
+  "details": "In readSampleData of NuMediaExtractor.cpp, there is a possible out of bounds write due to uninitialized data. This could lead to remote code execution with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21127"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-06-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-06-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+/ff06107de18166f1d97baddabfe23a608ef35ceb"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/av",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-06-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-06-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-06-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-06-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/av/+/943fc12219b21d2a98f0ddc070b9b316a6f5d412"
+        ],
+        "spl": "2023-06-01",
+        "types": [
+          "RCE"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-275418191.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

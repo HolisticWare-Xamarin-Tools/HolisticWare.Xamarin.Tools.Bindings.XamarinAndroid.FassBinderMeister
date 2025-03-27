@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-179975048",
+  "summary": "[Airwatch] Users are able to turn off Always-On VPN in OS 11",
+  "details": "In the Settings app, there is a possible way to disable an always-on VPN due to a missing permission check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0505"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-06-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-06-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/735a216da31d8440d23fed4355521013ead630f3"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/apps/Settings",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-06-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/735a216da31d8440d23fed4355521013ead630f3"
+        ],
+        "spl": "2021-06-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-179975048.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

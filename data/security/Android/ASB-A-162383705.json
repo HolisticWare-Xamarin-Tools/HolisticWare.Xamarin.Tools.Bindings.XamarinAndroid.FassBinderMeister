@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-162383705",
+  "summary": "GpuService setUpdatableDriverPath has security vulnerabilities and racing issues",
+  "details": "In setUpdatableDriverPath of GpuService.cpp, there is a possible memory corruption due to a missing permission check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2020-0420"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2020-10-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2020-10-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/e0984b06cb64acc83a54a60854ad03e65a3cea1e"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/native",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2020-10-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/native/+/e0984b06cb64acc83a54a60854ad03e65a3cea1e"
+        ],
+        "spl": "2020-10-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-162383705.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

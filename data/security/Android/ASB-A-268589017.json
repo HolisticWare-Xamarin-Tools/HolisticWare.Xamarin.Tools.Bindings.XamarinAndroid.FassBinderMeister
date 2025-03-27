@@ -1,0 +1,73 @@
+{
+  "id": "ASB-A-268589017",
+  "summary": "Linux kernel vulnerability advisory",
+  "details": "In bigben_remove of hid-bigbenff.c, there is a possible race condition due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-25012"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/2cabed5f026551685b5c652fedcb010cc1e4c22a"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/1fd3cdb1c245d67442d04c06c63dd0de96cd6091"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/e422c244a9b2192e3734825bd0c1cfed5cf8cc23"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/617c5ccc25ececa1efbc96a6a87499ec02070535"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2023-07-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/2cabed5f026551685b5c652fedcb010cc1e4c22a",
+          "https://android.googlesource.com/kernel/common/+/1fd3cdb1c245d67442d04c06c63dd0de96cd6091",
+          "https://android.googlesource.com/kernel/common/+/e422c244a9b2192e3734825bd0c1cfed5cf8cc23",
+          "https://android.googlesource.com/kernel/common/+/617c5ccc25ececa1efbc96a6a87499ec02070535"
+        ],
+        "spl": "2023-07-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-268589017.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

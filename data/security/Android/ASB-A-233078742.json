@@ -1,0 +1,59 @@
+{
+  "id": "ASB-A-233078742",
+  "summary": "Android Security - [EMBARGO 5/24] invalid-free in io_uring that can lead to LPE",
+  "details": "In io_req_init_async there is a potential use after free due to a race condition. This could lead to local escalation of privileges with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "ASB-A-230867044",
+    "CVE-2022-1786"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-08-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-08-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/812805ff3b0c7069dc94d4a031960b4e2c80beac"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2022-08-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/812805ff3b0c7069dc94d4a031960b4e2c80beac"
+        ],
+        "spl": "2022-08-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-233078742.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

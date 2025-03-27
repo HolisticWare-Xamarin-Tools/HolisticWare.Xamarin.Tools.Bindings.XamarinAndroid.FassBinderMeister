@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-278113033",
+  "summary": "Integer overflow in SkSLVMCodeGenerator",
+  "details": "In multiple functions of SkSLFunctionDefinition.cpp, there is a possible out of bounds write due to a missing bounds check. This could lead to remote code execution in an unprivileged app with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2023-2136"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/external/skia/+/cfaa1ca1ceec8ec46ffbc89f707d280007a52c83"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/external/skia",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-07-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/external/skia/+/2f8a7106dff052c157d876753daa29f8a40ed6ce"
+        ],
+        "spl": "2023-07-01",
+        "types": [
+          "RCE"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-278113033.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

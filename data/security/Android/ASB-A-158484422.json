@@ -1,0 +1,65 @@
+{
+  "id": "ASB-A-158484422",
+  "summary": "Registering a location listener with lower target SDK allows cell location permission bypass",
+  "details": "In listen() and related functions of TelephonyRegistry.java, there is a possible permissions bypass of location permissions due to a missing permission check. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2020-0468"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2020-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2020-12-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/af35aa5ac57a8c7c4534d82d8cd6cfb4f049bbfe"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2020-12-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2020-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/af35aa5ac57a8c7c4534d82d8cd6cfb4f049bbfe"
+        ],
+        "spl": "2020-12-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-158484422.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

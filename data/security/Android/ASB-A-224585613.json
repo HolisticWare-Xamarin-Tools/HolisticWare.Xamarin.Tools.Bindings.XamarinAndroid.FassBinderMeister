@@ -1,0 +1,99 @@
+{
+  "id": "ASB-A-224585613",
+  "summary": "User directories can be left unencrypted due to missing error check",
+  "details": "In multiple functions of StorageManagerService.java and UserManagerService.java, there is a possible way to leave user's directories unencrypted due to a logic error in the code. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20219"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/2ba316f58e4429033caa495cbc22a0d66dd92d15"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/6ba336c0e280183a04ca45b217a7e89f8419d62b"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/0067ba2426506ec7516dcb18bec5f8a68c116fe9"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/16cf824d3a3dab638698ffaa995621ae18cfcf4e"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/187187a31441e44c29d13c1a04c932abc420b709"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2022-07-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-07-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-07-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-07-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11",
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/2ba316f58e4429033caa495cbc22a0d66dd92d15",
+          "https://android.googlesource.com/platform/frameworks/base/+/6ba336c0e280183a04ca45b217a7e89f8419d62b",
+          "https://android.googlesource.com/platform/frameworks/base/+/0067ba2426506ec7516dcb18bec5f8a68c116fe9",
+          "https://android.googlesource.com/platform/frameworks/base/+/16cf824d3a3dab638698ffaa995621ae18cfcf4e",
+          "https://android.googlesource.com/platform/frameworks/base/+/187187a31441e44c29d13c1a04c932abc420b709"
+        ],
+        "spl": "2022-07-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-224585613.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

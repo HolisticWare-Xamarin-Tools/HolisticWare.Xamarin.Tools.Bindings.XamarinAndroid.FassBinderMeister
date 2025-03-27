@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-272024837",
+  "summary": "Start foreground activity from background via MediaSession#setMediaButtonReceiver",
+  "details": "In setMediaButtonReceiver of MediaSessionRecord.java, there is a possible way to send a pending intent on behalf of system_server due to a confused deputy. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2023-40111"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-11-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-11-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/55d3d57cbffc838c52d610af14a056dea87b422e"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2023-11-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/fda5a94aaf91933f8602e00d78ad9ba4872c72f4"
+        ],
+        "spl": "2023-11-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-272024837.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

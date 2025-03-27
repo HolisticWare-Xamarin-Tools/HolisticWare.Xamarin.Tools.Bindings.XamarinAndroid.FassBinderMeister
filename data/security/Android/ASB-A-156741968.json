@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-156741968",
+  "summary": "App zygotes leak AID_READPROC",
+  "details": "In SpecializeCommon of com_android_internal_os_Zygote.cpp, there is a permissions bypass due to an incomplete cleanup. This could lead to local escalation of privilege in isolated processes with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2020-0257"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2020-08-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2020-08-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/b26c7160cd1dfba9224ba12dc075ac3c658b18c3"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2020-08-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/b26c7160cd1dfba9224ba12dc075ac3c658b18c3"
+        ],
+        "spl": "2020-08-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-156741968.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

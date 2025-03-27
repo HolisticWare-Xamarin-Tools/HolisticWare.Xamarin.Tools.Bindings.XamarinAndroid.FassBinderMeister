@@ -1,0 +1,86 @@
+{
+  "id": "ASB-A-241927115",
+  "summary": "Delete SoftAp configuration on network reset",
+  "details": "In multiple files, there is a possible way to preserve WiFi settings due to residual data after a reset. This could lead to local information disclosure with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20481"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-02-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-02-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Wifi/+/f87c9f414c9db99ddc3e677d5871ad763566c97e"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Wifi",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2023-02-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-02-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-02-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-02-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-02-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Wifi/+/f87c9f414c9db99ddc3e677d5871ad763566c97e"
+        ],
+        "spl": "2023-02-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-241927115.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

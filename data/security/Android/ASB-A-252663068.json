@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-252663068",
+  "summary": "[Regression] Uninstalling of packages by DPC does not work in T",
+  "details": "In getStringsForPrefix of Settings.java, there is a possible prevention of package uninstallation due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-20919"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-01-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-01-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/c224467912010cce927d206366d772f511c98728"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-01-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/c224467912010cce927d206366d772f511c98728"
+        ],
+        "spl": "2023-01-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-252663068.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

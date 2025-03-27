@@ -1,0 +1,111 @@
+{
+  "id": "ASB-A-213644870",
+  "summary": "SF Security Vulnerability, Privilege Escalation through transaction merging",
+  "details": "In finishDrawingWindow of WindowManagerService.java, there is a possible tapjacking due to improper input validation. This could lead to local escalation of privilege with User execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20226"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/1ff38ab351a617c4870eec236b70932ff2c4473b"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/20303e05bf73796124ab70a279cf849b61b97905"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-07-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-07-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/20303e05bf73796124ab70a279cf849b61b97905"
+        ],
+        "spl": "2022-07-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-213644870.json"
+      }
+    },
+    {
+      "package": {
+        "name": "platform/frameworks/native",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-07-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-07-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/native/+/1ff38ab351a617c4870eec236b70932ff2c4473b"
+        ],
+        "spl": "2022-07-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-213644870.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

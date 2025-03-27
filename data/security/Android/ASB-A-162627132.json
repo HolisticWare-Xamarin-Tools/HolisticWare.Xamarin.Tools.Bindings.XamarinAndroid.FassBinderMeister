@@ -1,0 +1,63 @@
+{
+  "id": "ASB-A-162627132",
+  "summary": "Untrusted entity can create a trusted virtual display",
+  "details": "In createVirtualDisplay of DisplayManagerService.java, there is a possible way to create a trusted virtual display due to a missing permission check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2020-0440"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2020-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2020-12-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/11725e1206645e567cfdd70100d64d1e0a85180d"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/534bbaeead15bc3c540efd947b3a5ade62cf27be"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2020-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/11725e1206645e567cfdd70100d64d1e0a85180d",
+          "https://android.googlesource.com/platform/frameworks/base/+/534bbaeead15bc3c540efd947b3a5ade62cf27be"
+        ],
+        "spl": "2020-12-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-162627132.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

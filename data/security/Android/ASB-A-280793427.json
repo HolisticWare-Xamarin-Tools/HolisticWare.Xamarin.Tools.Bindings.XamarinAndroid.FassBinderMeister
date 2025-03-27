@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-280793427",
+  "summary": "EoP: Default IME to Device Administrator",
+  "details": "In onCreate of DeviceAdminAdd.java, there is a possible way to forcibly add a device admin due to a missing permission check. This could lead to local denial of service (factory reset or continuous locking) with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-35677"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-09-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-09-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/846180c19f68f6fb1b0653356401d3235fef846e"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/apps/Settings",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-09-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-09-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-09-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-09-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/70a501d02e0a6aefd874767a15378ba998759373"
+        ],
+        "spl": "2023-09-01",
+        "types": [
+          "DoS"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-280793427.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

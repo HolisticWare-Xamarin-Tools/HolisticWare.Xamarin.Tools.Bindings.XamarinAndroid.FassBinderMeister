@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-228450832",
+  "summary": "Legacy apps bypass restrict to insert/update files to other app's external private dirs",
+  "details": "In extractRelativePath of FileUtils.java, there is a possible way to access files in a directory belonging to other applications due to a path traversal error. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21093"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/providers/MediaProvider/+/8e3c6bd122b2e42fd4a35659438060caa5448784"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/providers/MediaProvider",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-04-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-04-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-04-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-04-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/providers/MediaProvider/+/798fa4b89e154877e4ddafc3894eb8275a74eb7e"
+        ],
+        "spl": "2023-04-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-228450832.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

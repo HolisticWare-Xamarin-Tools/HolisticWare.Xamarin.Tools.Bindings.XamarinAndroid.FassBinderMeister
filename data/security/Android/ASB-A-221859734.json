@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-221859734",
+  "summary": "[Multiple users join the WI-FI network by scanning the QR code]",
+  "details": "In addOrUpdateNetwork of WifiServiceImpl.java, there is a possible way for a guest user to configure Wi-Fi due to a permissions bypass. This could lead to local escalation of privilege with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20398"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-09-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-09-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Wifi/+/737e26535baeb007b9034f581b4616699b05725f"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Wifi",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2022-09-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Wifi/+/737e26535baeb007b9034f581b4616699b05725f"
+        ],
+        "spl": "2022-09-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-221859734.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

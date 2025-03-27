@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-172252122",
+  "summary": "[ImportVCardActivity Could be Overlaid to Trick User into Importing Contacts]",
+  "details": "In ImportVCardActivity, there is a possible way to bypass user consent due to a tapjacking/overlay attack. This could lead to local escalation of privilege with User execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0446"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Contacts/+/448e2f1bf40d566aaeac9ac269eb3394225448bf"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/apps/Contacts",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-04-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/apps/Contacts/+/448e2f1bf40d566aaeac9ac269eb3394225448bf"
+        ],
+        "spl": "2021-04-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-172252122.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

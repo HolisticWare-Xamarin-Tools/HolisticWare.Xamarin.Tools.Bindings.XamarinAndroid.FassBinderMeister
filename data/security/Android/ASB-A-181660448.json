@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-181660448",
+  "summary": "Wifi - Issue while processing P2P provision discovery request",
+  "details": "In p2p_process_prov_disc_req of p2p_pd.c, there is a possible out of bounds read and write due to a use after free. This could lead to remote escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0516"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-06-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-06-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/external/wpa_supplicant_8/+/13c4cdae55e840a1a47e57e19bfa59135358b8ca"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/external/wpa_supplicant_8",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2021-06-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-06-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-06-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-06-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.1",
+        "9",
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/external/wpa_supplicant_8/+/13c4cdae55e840a1a47e57e19bfa59135358b8ca"
+        ],
+        "spl": "2021-06-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-181660448.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

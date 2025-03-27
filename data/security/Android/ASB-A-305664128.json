@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-305664128",
+  "summary": "Screen capture policy overriden when there is secondary user on the device",
+  "details": "In multiple files, there is a possible way to capture the device screen when disallowed by device policy due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2024-0029"
+  ],
+  "modified": "2024-05-14T14:40:25Z",
+  "published": "2024-02-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2024-02-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/9b10fd9718f4e6f6843adbfc14e46a93aab93aad"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2024-02-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/5f3db5ae9b9cf69c8a4ea73b6ed49ce9d49ba223"
+        ],
+        "spl": "2024-02-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-305664128.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

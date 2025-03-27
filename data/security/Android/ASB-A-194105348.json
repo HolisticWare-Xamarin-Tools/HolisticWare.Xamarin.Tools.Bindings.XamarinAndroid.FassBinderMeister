@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-194105348",
+  "summary": "[SIGSEGV in /system/lib64/libstagefright.so (android::SimpleDecodingSource::doRead)]",
+  "details": "In doRead of SimpleDecodingSource.cpp, there is a possible out of bounds write due to an incorrect bounds check. This could lead to remote escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-39623"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-01-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-01-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+/5753afcd4c87f5566f4014cce1cbc8d767572331"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/av",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2022-01-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2022-01-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-01-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-01-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/av/+/5753afcd4c87f5566f4014cce1cbc8d767572331"
+        ],
+        "spl": "2022-01-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-194105348.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

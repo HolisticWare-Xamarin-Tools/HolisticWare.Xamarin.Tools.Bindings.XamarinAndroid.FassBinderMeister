@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-254803162",
+  "summary": "Backport: FreeType Heap buffer overflow read",
+  "details": "In read_paint of ttcolr.c, there is a possible out of bounds read due to a heap buffer overflow. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-20958"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-03-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-03-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/external/freetype/+/e0c9c8b35e2071d0591c151cd7d752bdf783f747"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/external/freetype",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-03-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/external/freetype/+/f916fca5d1361dc674118bec51eff2b5299c4c79"
+        ],
+        "spl": "2023-03-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-254803162.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

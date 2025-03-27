@@ -1,0 +1,123 @@
+{
+  "id": "ASB-A-253642088",
+  "summary": ": wifi: cfg80211: avoid nontransmitted BSS list corruption",
+  "details": "In cfg80211_add_nontrans_list of scan.c, there is a possible way to corrupt a list due to a logic error in the code. This could lead to remote code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-42721"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-01-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-01-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/9a8ef2030510a"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/0a861bd25dad5"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/9e99ca59ed397"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/bfe29873454f3"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/0a8ee682e4f99"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/fff244e9171b2"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/93a3a32554079"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/d15bb1f6dabe1"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/864f2d3482f4b"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/21df3a583e8e0"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/630060f117567"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/fee48f3bdd751"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/7d998f6b7365d"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/de124365a7d2d"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2023-01-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/9a8ef2030510a",
+          "https://android.googlesource.com/kernel/common/+/0a861bd25dad5",
+          "https://android.googlesource.com/kernel/common/+/9e99ca59ed397",
+          "https://android.googlesource.com/kernel/common/+/bfe29873454f3",
+          "https://android.googlesource.com/kernel/common/+/0a8ee682e4f99",
+          "https://android.googlesource.com/kernel/common/+/fff244e9171b2",
+          "https://android.googlesource.com/kernel/common/+/93a3a32554079",
+          "https://android.googlesource.com/kernel/common/+/d15bb1f6dabe1",
+          "https://android.googlesource.com/kernel/common/+/864f2d3482f4b",
+          "https://android.googlesource.com/kernel/common/+/21df3a583e8e0",
+          "https://android.googlesource.com/kernel/common/+/630060f117567",
+          "https://android.googlesource.com/kernel/common/+/fee48f3bdd751",
+          "https://android.googlesource.com/kernel/common/+/7d998f6b7365d",
+          "https://android.googlesource.com/kernel/common/+/de124365a7d2d"
+        ],
+        "spl": "2023-01-05",
+        "types": [
+          "RCE"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-253642088.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

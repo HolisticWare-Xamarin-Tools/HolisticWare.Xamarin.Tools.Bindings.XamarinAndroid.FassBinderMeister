@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-224314979",
+  "summary": "C2FuzzerAacDec: Tag-mismatch in FDK_QmfDomain_InitFilterBank",
+  "details": "In transportDec_OutOfBandConfig of  tpdec_lib.cpp, there is a possible out of bounds write due to a heap buffer overflow. This could lead to remote code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20130"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-06-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-06-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/external/aac/+/eb07c22519d94e573f2a02947094acd2219dc07a"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/external/aac",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2022-06-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-06-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-06-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-06-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11",
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/external/aac/+/067929dcd3467fd8e1383303efaff2cfc37224e9"
+        ],
+        "spl": "2022-06-01",
+        "types": [
+          "RCE"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-224314979.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

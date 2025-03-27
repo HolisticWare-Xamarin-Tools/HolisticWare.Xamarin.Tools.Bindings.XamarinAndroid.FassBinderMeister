@@ -1,0 +1,72 @@
+{
+  "id": "ASB-A-199754277",
+  "summary": "EoP: overlay attack on KeyChainActivity",
+  "details": "In onCreate of KeyChainActivity.java, there is a possible way to use an app certificate stored in keychain due to a tapjacking/overlay attack. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0963"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-12-01"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":unknown:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-12-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-12-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-12-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2021-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "ecosystem_specific": {
+        "spl": "2021-12-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-199754277.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

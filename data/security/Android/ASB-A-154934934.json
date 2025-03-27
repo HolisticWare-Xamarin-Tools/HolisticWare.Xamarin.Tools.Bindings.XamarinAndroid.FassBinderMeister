@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-154934934",
+  "summary": "[Another Untrusted APP Access Location Bypass]",
+  "details": "In requestCellInfoUpdateInternal of PhoneInterfaceManager.java, there is a missing permission check. This could lead to local information disclosure of location data with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2020-0250"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2020-08-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2020-08-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/services/Telephony/+/aa4283b976ea7bc5d1708472477834462a1dbdde"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/services/Telephony",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2020-08-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/services/Telephony/+/aa4283b976ea7bc5d1708472477834462a1dbdde"
+        ],
+        "spl": "2020-08-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-154934934.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

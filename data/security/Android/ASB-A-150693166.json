@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-150693166",
+  "summary": "BUG: unable to handle kernel paging request in kfree",
+  "details": "In audit_free_lsm_field of auditfilter.c, there is a possible bad kfree due to a logic error in audit_data_to_entry. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2020-0444"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2020-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2020-12-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/2ad3e17ebf94b7b7f3f64c050ff168f9915345eb"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2020-12-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/2ad3e17ebf94b7b7f3f64c050ff168f9915345eb"
+        ],
+        "spl": "2020-12-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-150693166.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

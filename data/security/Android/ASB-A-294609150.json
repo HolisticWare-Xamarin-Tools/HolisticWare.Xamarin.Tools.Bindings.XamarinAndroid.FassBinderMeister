@@ -1,0 +1,153 @@
+{
+  "id": "ASB-A-294609150",
+  "summary": "[Binder MemoryHeapBase] - Need to SEAL file size on memfd mapped region",
+  "details": "In multiple functions of ashmem-dev.cpp, there is a possible missing seal due to a heap buffer overflow. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2024-0033"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2024-02-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2024-02-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/aa98edf0ce9dde4886979658a459900ca987f193"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/system/core/+/46d46dc46446f14f26fbe8fb102dd36c1dfc1229"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/native",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2024-02-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2024-02-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2024-02-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2024-02-01"
+            },
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2024-02-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13",
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/native/+/3d9f1e3b0a135b784b9ffa0e65d6a699c7ed1f8e"
+        ],
+        "spl": "2024-02-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-294609150.json"
+      }
+    },
+    {
+      "package": {
+        "name": "platform/system/core",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2024-02-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2024-02-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2024-02-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2024-02-01"
+            },
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2024-02-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13",
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/system/core/+/f83c5c8fecf89d9315945368aa20350c2f235cc0"
+        ],
+        "spl": "2024-02-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-294609150.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

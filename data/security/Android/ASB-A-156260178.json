@@ -1,0 +1,70 @@
+{
+  "id": "ASB-A-156260178",
+  "summary": "Local permanent denial of service - exploit ContentResolver & font_scale, resulting in bricked phone (Android 10/11+)",
+  "details": "In SystemSettingsValidators, there is a possible permanent denial of service due to missing bounds checks on UI settings. This could lead to local denial of service with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0338"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/459f6cbe7537b1ba0b88b96c44099bc897c1bcc8"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/edeb081ad8b22b4a32ff90610f9f06182025e41c"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-04-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-04-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/459f6cbe7537b1ba0b88b96c44099bc897c1bcc8",
+          "https://android.googlesource.com/platform/frameworks/base/+/edeb081ad8b22b4a32ff90610f9f06182025e41c"
+        ],
+        "spl": "2021-04-01",
+        "types": [
+          "DoS"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-156260178.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

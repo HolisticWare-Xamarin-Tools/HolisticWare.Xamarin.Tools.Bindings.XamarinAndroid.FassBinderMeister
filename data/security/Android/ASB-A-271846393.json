@@ -1,0 +1,66 @@
+{
+  "id": "ASB-A-271846393",
+  "summary": "LaunchAnywhere in SystemUI via OutputSwitcher",
+  "details": "In bindOutputSwitcherAndBroadcastButton of MediaControlPanel.java, there is a possible launch arbitrary activity under SysUI due to Unsafe Intent. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21126"
+  ],
+  "modified": "2024-05-14T14:40:23Z",
+  "published": "2023-06-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-06-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/b8e6044520761f537473d0a04a651118236d2c52"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/0f857518e3dd6490508a88ceac39309e77cb231b"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/3721a8ad742248e7c017115c088291015f40319d"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-06-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/335a3cb7b413fc178f0b190491b870b3327bd7b0"
+        ],
+        "spl": "2023-06-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-271846393.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

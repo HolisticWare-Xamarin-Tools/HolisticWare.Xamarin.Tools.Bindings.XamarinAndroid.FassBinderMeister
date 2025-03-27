@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-155756045",
+  "summary": "GKI: Use-after-free in dmabuffs_dname",
+  "details": "In dma_buf_release of dma-buf.c, there is a possible memory corruption due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0707"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/6e6c15288df8c4c6264f394ece251ef9f64b0e3f"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2022-04-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/6e6c15288df8c4c6264f394ece251ef9f64b0e3f"
+        ],
+        "spl": "2022-04-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-155756045.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

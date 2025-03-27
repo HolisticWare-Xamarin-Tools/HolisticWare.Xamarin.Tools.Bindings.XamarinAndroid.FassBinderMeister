@@ -1,0 +1,59 @@
+{
+  "id": "ASB-A-192605364",
+  "summary": "Malicious SQL statement causes an read past the end of a heap buffer",
+  "details": "In sqlite3Select of select.c, there is a possible out-of-bounds write due to a missing bounds check. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "BIT-sqlite-2020-15358",
+    "CVE-2020-15358"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-10-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-10-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/external/sqlite/+/1935111b5e902f2ca305d1b2efae6fe46acfffe5"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/external/sqlite",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-10-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/external/sqlite/+/1935111b5e902f2ca305d1b2efae6fe46acfffe5"
+        ],
+        "spl": "2021-10-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-192605364.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

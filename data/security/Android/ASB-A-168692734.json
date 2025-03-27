@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-168692734",
+  "summary": "Synthetic password gets overwritten when password reset token is auto-activated.",
+  "details": "In addEscrowToken of LockSettingsService.java, there is a possible loss of the synthetic password due to logic error. This could lead to local denial of service with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2020-0469"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2020-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2020-12-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/1a6f1fb402b96df561b9672aef1e4fce8a13de80"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2020-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/1a6f1fb402b96df561b9672aef1e4fce8a13de80"
+        ],
+        "spl": "2020-12-01",
+        "types": [
+          "DoS"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-168692734.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

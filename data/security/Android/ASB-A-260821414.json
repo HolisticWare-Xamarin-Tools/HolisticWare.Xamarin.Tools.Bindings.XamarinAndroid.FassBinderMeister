@@ -1,0 +1,63 @@
+{
+  "id": "ASB-A-260821414",
+  "summary": "EFI Linux/arm64 code can be subverted to overwrite the shadow call stack pointer",
+  "details": "In __efi_rt_asm_wrapper of efi-rt-wrapper.S, there is a possible bypass of shadow stack protection due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21102"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-05-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-05-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/ec6fe823507b2f6ef4a58f3a9bee9a5ec086c32c"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/984241bdc04f401c423005a52eb013b00e19358c"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2023-05-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/ec6fe823507b2f6ef4a58f3a9bee9a5ec086c32c",
+          "https://android.googlesource.com/kernel/common/+/984241bdc04f401c423005a52eb013b00e19358c"
+        ],
+        "spl": "2023-05-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-260821414.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

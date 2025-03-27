@@ -1,0 +1,80 @@
+{
+  "id": "ASB-A-274445194",
+  "summary": "Permanent device denial of service due to OutOfMemoryError while system is turning on",
+  "details": "In validateForCommonR1andR2 of PasspointConfiguration.java, there is a possible way to inflate the size of a config file with no limits due to a buffer overflow. This could lead to local denial of service with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21243"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Wifi/+/5b49b8711efaadadf5052ba85288860c2d7ca7a6"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Wifi",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-07-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-07-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-07-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-07-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Wifi/+/ac5284c457b3113f5a50e8ee79a7290ceca29143",
+          "https://android.googlesource.com/platform/packages/modules/Wifi/+/b313ac6890794a278eecd1a280013177c5eff5d2"
+        ],
+        "spl": "2023-07-01",
+        "types": [
+          "DoS"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-274445194.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

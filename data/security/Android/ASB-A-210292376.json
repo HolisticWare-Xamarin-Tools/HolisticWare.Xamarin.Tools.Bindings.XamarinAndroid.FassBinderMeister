@@ -1,0 +1,68 @@
+{
+  "id": "ASB-A-210292376",
+  "summary": "Linux USB Gadget Buffer overflows",
+  "details": "In various setup methods of the USB gadget subsystem, there is a possible out of bounds write due to an incorrect flag check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-39685"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-03-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-03-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/b4604acd52a691c2fd33ad0a0fafb7cc19dee5de"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/53afb231f54a69d827b882fa282b30bb10cb08a5"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/d3c17d5e271ab688cb117330ec85e125ebf24d88"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2022-03-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/b4604acd52a691c2fd33ad0a0fafb7cc19dee5de",
+          "https://android.googlesource.com/kernel/common/+/53afb231f54a69d827b882fa282b30bb10cb08a5",
+          "https://android.googlesource.com/kernel/common/+/d3c17d5e271ab688cb117330ec85e125ebf24d88"
+        ],
+        "spl": "2022-03-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-210292376.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

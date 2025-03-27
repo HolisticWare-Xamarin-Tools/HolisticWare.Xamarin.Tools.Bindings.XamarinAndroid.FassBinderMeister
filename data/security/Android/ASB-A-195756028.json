@@ -1,0 +1,73 @@
+{
+  "id": "ASB-A-195756028",
+  "summary": "EoP in shouldAbortBackgroundActivityStart of ActivityStarter.java",
+  "details": "In AlarmManagerActivity of AlarmManagerActivity.java, there is a possible way to bypass background activity launch restrictions via a pendingIntent. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-20950"
+  ],
+  "modified": "2024-05-14T14:40:20Z",
+  "published": "2023-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/e9f458c52e9c2c1d7591e279b48d2136244b4c8b"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-04-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-04-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-04-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/f4cedb277354040228a785776a5b017d64baf1f5",
+          "https://android.googlesource.com/platform/frameworks/base/+/f1f080fd362d03a5996290fb91155522b5d44914"
+        ],
+        "spl": "2023-04-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "Moderate"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-195756028.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-155650356",
+  "summary": "[Should prevent draw overlay on top of Bluetooth discoverable request dialog]",
+  "details": "In onCreate of RequestPermissionActivity.java, there is a possible tapjacking vector due to an insecure default value. This could lead to local escalation of privilege allowing an attacker to set Bluetooth discoverability with User execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2020-0386"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2020-09-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2020-09-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/ba7f6d7d45776254791dea3b1f5d2acc0dc9b2dd"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/apps/Settings",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0:0"
+            },
+            {
+              "fixed": "8.0:2020-09-01"
+            },
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2020-09-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2020-09-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2020-09-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.0",
+        "8.1",
+        "9",
+        "10"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/ba7f6d7d45776254791dea3b1f5d2acc0dc9b2dd"
+        ],
+        "spl": "2020-09-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-155650356.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

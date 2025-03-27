@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-154114734",
+  "summary": "Android uses the same link-local IPv6 address across different networks",
+  "details": "In startIpClient of ClientModeImpl.java, there is a possible identifier which could be used to track a device. This could lead to remote information disclosure to a proximal attacker, with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0466"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-05-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-05-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/opt/net/wifi/+/9ce03caaec5f1612a4798ca48f9556c8198066f2"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/opt/net/wifi",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-05-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/opt/net/wifi/+/9ce03caaec5f1612a4798ca48f9556c8198066f2"
+        ],
+        "spl": "2021-05-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-154114734.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

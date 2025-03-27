@@ -1,0 +1,84 @@
+{
+  "id": "ASB-A-179386960",
+  "summary": "[BroadcastAnyWhere via Settings##BluetoothPermissionActivity mReturnPackage and mReturnClass]",
+  "details": "In sendReplyIntentToReceiver of BluetoothPermissionActivity.java, there is a possible way to invoke privileged broadcast receivers due to a confused deputy.  This could lead to local escalation of privilege with User execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0591"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-08-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-08-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/f1d1bb78162209335b086ee10d8b7449879bcc64"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/cdf9a1509b0ef1450b2b9b8c349abdbc7902be95"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/apps/Settings",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2021-08-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-08-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-08-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-08-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.1",
+        "9",
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/f1d1bb78162209335b086ee10d8b7449879bcc64",
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/cdf9a1509b0ef1450b2b9b8c349abdbc7902be95"
+        ],
+        "spl": "2021-08-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-179386960.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

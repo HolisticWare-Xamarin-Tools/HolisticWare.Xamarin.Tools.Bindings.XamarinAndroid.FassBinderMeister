@@ -1,0 +1,77 @@
+{
+  "id": "ASB-A-200813547",
+  "summary": "[EoP: Bypass Storage Restriction in Android 11]",
+  "details": "In checkFileUriDestination of DownloadProvider.java, there is a possible way to bypass external storage private directories protection due to a missing permission check. This could lead to local escalation of privilege with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-39697"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-03-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-03-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/providers/DownloadProvider/+/0dc5048914eb6a7f919c8749172b971cbb315870"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/providers/DownloadProvider/+/9ff84f6d353a7647efba91d74e31d17ba6b765b7"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/providers/DownloadProvider",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-03-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-03-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-03-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/providers/DownloadProvider/+/0dc5048914eb6a7f919c8749172b971cbb315870",
+          "https://android.googlesource.com/platform/packages/providers/DownloadProvider/+/9ff84f6d353a7647efba91d74e31d17ba6b765b7"
+        ],
+        "spl": "2022-03-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-200813547.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

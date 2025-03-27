@@ -1,0 +1,65 @@
+{
+  "id": "ASB-A-311374917",
+  "summary": "Android frameworok sharedUserMaxSdkVersion attribute can make app become privileged app.",
+  "details": "In assertPackageWithSharedUserIdIsPrivileged of InstallPackageHelper.java, there is a possible execution of arbitrary app code as a privileged app due to a logic error in the code. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2024-23710"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2024-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2024-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/c7c1193ca7554fc3182ca9ab0f711bd118bdeef2"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2024-04-01"
+            },
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2024-04-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "13",
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/c7c1193ca7554fc3182ca9ab0f711bd118bdeef2"
+        ],
+        "spl": "2024-04-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-311374917.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

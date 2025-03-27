@@ -1,0 +1,94 @@
+{
+  "id": "ASB-A-168903843",
+  "summary": "external/libcups - heap buffer overflow in ipp.c - ASAN READ",
+  "details": "In ippSetValueTag of ipp.c, there is a possible out of bounds read due to a missing bounds check. This could lead to local information disclosure of past print jobs or other print-related information, with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-40112"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-11-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-11-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/services/BuiltInPrintService/+/d7cb53cb5b47f4afdb84cb0e161d84fdc2c32ce7"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/external/libcups",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-11-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/external/libcups/+/9acc7f09e5a487e4abd2405bcfa3c3fe64678afd",
+          "https://android.googlesource.com/platform/external/libcups/+/dc7c0ae917595e60a7e6e9951a6a951e875cb700"
+        ],
+        "spl": "2023-11-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-168903843.json"
+      }
+    },
+    {
+      "package": {
+        "name": "platform/packages/services/BuiltInPrintService",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-11-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/services/BuiltInPrintService/+/efd42ba040e27b6627f3c17eaf2fb41f8eb07ffd"
+        ],
+        "spl": "2023-11-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-168903843.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

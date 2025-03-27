@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-189942532",
+  "summary": "Android NFC Out-Of-Bounds Write due to increase mNumTechList without bounds checking",
+  "details": "In NfcTag::discoverTechnologies (activation) of NfcTag.cpp, there is a possible out of bounds write due to an incorrect bounds check. This could lead to remote escalation of privilege with no additionalSystem execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0956"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-12-01"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":unknown:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-12-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2021-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12"
+      ],
+      "ecosystem_specific": {
+        "spl": "2021-12-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-189942532.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

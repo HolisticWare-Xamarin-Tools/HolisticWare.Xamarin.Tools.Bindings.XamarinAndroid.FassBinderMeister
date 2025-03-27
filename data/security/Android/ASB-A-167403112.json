@@ -1,0 +1,97 @@
+{
+  "id": "ASB-A-167403112",
+  "summary": "Phishing attacks over Bluetooth due to unclear warning message",
+  "details": "In onReceive of BluetoothPermissionRequest.java, there is a possible phishing attack allowing a malicious Bluetooth device to acquire permissions based on insufficient information presented to the user in the consent dialog. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0434"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-11-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-11-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/8fe8e0fc211d4f36cce2865a17c834573ec25211"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/65e3c68e6fbfb1d6762718a190416a2bff36962c"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/fa504b8e01405fa529670b6ac6112d0241c2ff86"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/a5046f219a545246f244f0dc003eefdeb1dfeb93"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/80d8b03d027f3dffb85958f849be3b5316791107"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/10e459921953825d34e70cc4da846aac703d913c"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/apps/Settings",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-11-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-11-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-11-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "9",
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/8fe8e0fc211d4f36cce2865a17c834573ec25211",
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/65e3c68e6fbfb1d6762718a190416a2bff36962c",
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/fa504b8e01405fa529670b6ac6112d0241c2ff86",
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/a5046f219a545246f244f0dc003eefdeb1dfeb93",
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/80d8b03d027f3dffb85958f849be3b5316791107",
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/10e459921953825d34e70cc4da846aac703d913c"
+        ],
+        "spl": "2021-11-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-167403112.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,72 @@
+{
+  "id": "ASB-A-246539931",
+  "summary": "Permanent denial of service via WifiManager#addOrUpdatePasspointConfiguration with invalid PasspointConfiguration.mDecoratedIdentityPrefix",
+  "details": "In validateForCommonR1andR2 of PasspointConfiguration.java, uncaught errors in parsing stored configs could lead to local persistent denial of service with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20499"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-03-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-03-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Wifi/+/2e0196f10caaba981ec595d4c67a820eb802f74b"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Wifi",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-03-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-03-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-03-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Wifi/+/a7dc36ec5e2cc4dd3e652ba098ea47b3e74d51cc"
+        ],
+        "spl": "2023-03-01",
+        "types": [
+          "DoS"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-246539931.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

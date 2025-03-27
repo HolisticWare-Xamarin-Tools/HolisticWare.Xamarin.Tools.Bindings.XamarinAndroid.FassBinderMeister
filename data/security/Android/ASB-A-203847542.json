@@ -1,0 +1,65 @@
+{
+  "id": "ASB-A-203847542",
+  "summary": "Crash in /system/bin/servicemanager, HWAddressSanitizer: tag-mismatch on address 0x0047d0091f80 at pc 0x0070cd6a11e4 READ of size 8 at 0x0047d0091f80 tags: d3/5b (ptr/mem) in thread T0",
+  "details": "In ipcSetDataReference of Parcel.cpp, there is a possible way to corrupt memory due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-39620"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-01-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-01-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/f2e0a95700a937e421647623a60c9fc01d6e5d87"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/native",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-01-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-01-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/native/+/f2e0a95700a937e421647623a60c9fc01d6e5d87"
+        ],
+        "spl": "2022-01-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-203847542.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

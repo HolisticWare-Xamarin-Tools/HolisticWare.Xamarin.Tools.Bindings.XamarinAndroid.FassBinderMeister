@@ -1,0 +1,78 @@
+{
+  "id": "ASB-A-185125206",
+  "summary": "Kernel exploit: aio poll + binder heap UAF",
+  "details": "In aio_poll_complete_work of aio.c, there is a possible memory corruption due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-39698"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-03-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-03-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/42288cb44c4b"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/a880b28a71e3"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/9537bae0da1f"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/363bee27e258"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/50252e4b5e98"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2022-03-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/42288cb44c4b",
+          "https://android.googlesource.com/kernel/common/+/a880b28a71e3",
+          "https://android.googlesource.com/kernel/common/+/9537bae0da1f",
+          "https://android.googlesource.com/kernel/common/+/363bee27e258",
+          "https://android.googlesource.com/kernel/common/+/50252e4b5e98"
+        ],
+        "spl": "2022-03-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-185125206.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

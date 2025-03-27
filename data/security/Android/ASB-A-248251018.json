@@ -1,0 +1,86 @@
+{
+  "id": "ASB-A-248251018",
+  "summary": "Reading contacts of other users using emergency contact settings",
+  "details": "In onCreatePreferences of  EditInfoFragment.java, there is a possible way to read contacts belonging to other users due to improper input validation. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-20932"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-02-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-02-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/EmergencyInfo/+/ad688aaa1563f0d1d33af735d98d84c8af254838"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/apps/EmergencyInfo",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2023-02-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-02-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-02-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-02-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-02-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/apps/EmergencyInfo/+/ad688aaa1563f0d1d33af735d98d84c8af254838"
+        ],
+        "spl": "2023-02-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-248251018.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

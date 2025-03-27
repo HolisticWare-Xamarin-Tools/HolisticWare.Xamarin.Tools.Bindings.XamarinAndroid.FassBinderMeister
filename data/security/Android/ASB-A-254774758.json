@@ -1,0 +1,82 @@
+{
+  "id": "ASB-A-254774758",
+  "summary": "Native crash - AID_BLUETOOTH - signal 11 (SIGSEGV)../libbluetooth_jni.so (bluetooth::activity_attribution::AttributionProcessor::OnWakelockReleased)../libbluetooth_jni.so (bluetoo...",
+  "details": "In OnWakelockReleased of attribution_processor.cc, there is a use after free that could lead to remote code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21096"
+  ],
+  "modified": "2024-05-14T14:40:17Z",
+  "published": "2023-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/9406531d2140299c85bcff60c7d684b9d46acbe4"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/e035d58ca53aa16cdea0914319ebd415fdf02a4e"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/a621fd06157441d995c30d96a31e7883a808d6ab"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Bluetooth",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-04-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-04-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-04-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/2ffa65df8a71a129d28cccb09459168bb9bb2a96",
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/8813b3b7a2f596e42db1844983025d2d10193676",
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/bdcf174f20a7fe2ecf9e35758d76d9db4b480090"
+        ],
+        "spl": "2023-04-01",
+        "types": [
+          "RCE"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-254774758.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

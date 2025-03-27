@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-221855295",
+  "summary": "Path Traversal in MediaProvider#delete",
+  "details": "In checkAccess of MediaProvider.java, there is a possible file deletion due to a path traversal error. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20395"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-09-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-09-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/providers/MediaProvider/+/9b7b8bd674491ce499d76b52cd2209d7db261ea0"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/providers/MediaProvider",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-09-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-09-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-09-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2022-09-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/providers/MediaProvider/+/9b7b8bd674491ce499d76b52cd2209d7db261ea0"
+        ],
+        "spl": "2022-09-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-221855295.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

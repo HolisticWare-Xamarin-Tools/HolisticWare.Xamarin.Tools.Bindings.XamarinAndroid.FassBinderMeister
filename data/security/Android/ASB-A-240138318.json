@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-240138318",
+  "summary": "LazyValue in Bundle read with ReadWriteHelper may use Parcel after Parcel.recycle()",
+  "details": "In initializeFromParcelLocked of BaseBundle.java, there is a possible method arbitrary code execution due to a confused deputy. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20452"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-11-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-11-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/a0d9fc3b28f5b8113c90b43997d6c0151cfcb052"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2022-11-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/a0d9fc3b28f5b8113c90b43997d6c0151cfcb052"
+        ],
+        "spl": "2022-11-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-240138318.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

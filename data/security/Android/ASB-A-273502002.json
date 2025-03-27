@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-273502002",
+  "summary": "an potential OOB read in  btm_ble_periodic_adv_sync_lost Function in btm_be_gap.cc",
+  "details": "In btm_ble_periodic_adv_sync_lost of btm_ble_gap.cc, there is a possible remote code execution due to a buffer overflow. This could lead to remote code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21130"
+  ],
+  "modified": "2024-05-14T14:40:16Z",
+  "published": "2023-06-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-06-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/505d202c69f034f72a5f7c1f345afd340873c178"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Bluetooth",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-06-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/c077ffbe609c33adc212b73cd3018b174f0c8f89"
+        ],
+        "spl": "2023-06-01",
+        "types": [
+          "RCE"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-273502002.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

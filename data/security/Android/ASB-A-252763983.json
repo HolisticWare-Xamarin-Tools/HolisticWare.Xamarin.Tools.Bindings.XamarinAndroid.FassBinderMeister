@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-252763983",
+  "summary": "[Out of Bounds Read in AnalyzeMfcResp in NxpMfcReader.cc in nfc_nci_nxp]",
+  "details": "In AnalyzeMfcResp of NxpMfcReader.cc, there is a possible out of bounds read due to a missing bounds check. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21112"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-05-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-05-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/hardware/nxp/nfc/+/a20d5962d9350409204535b145826a41a7a3262d"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/hardware/nxp/nfc",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-05-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-05-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-05-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-05-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/hardware/nxp/nfc/+/69c53a6f1bca6d450e5100c1044114ffad615e5c"
+        ],
+        "spl": "2023-05-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-252763983.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

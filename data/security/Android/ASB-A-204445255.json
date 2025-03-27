@@ -1,0 +1,70 @@
+{
+  "id": "ASB-A-204445255",
+  "summary": "[OOB problem found in media.metrics process]",
+  "details": "In extract of MediaMetricsItem.h, there is a possible out of bounds read due to improper input validation. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-39666"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-02-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-02-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+/1b3b20e3ffbee16770c382d14ecbc4ec28cea88d"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+/fc120151250f8627b34e72ea3b01060bd9819c22"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/av",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-02-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-02-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/av/+/1b3b20e3ffbee16770c382d14ecbc4ec28cea88d",
+          "https://android.googlesource.com/platform/frameworks/av/+/fc120151250f8627b34e72ea3b01060bd9819c22"
+        ],
+        "spl": "2022-02-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-204445255.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

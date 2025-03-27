@@ -1,0 +1,84 @@
+{
+  "id": "ASB-A-151644303",
+  "summary": "[double-free problem found in mediaserver which is caused by the lack of mutex lock in function android::NuPlayerDriver::getParameter()",
+  "details": "In clearPropValue of MediaAnalyticsItem.cpp, there is a possible use-after-free due to improper locking. This could lead to local escalation of privilege in the media server with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2020-0243"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2020-08-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2020-08-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+/36a66d535b38245d386f2b5fd3ffbdcbbd0f3289"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+/e5767553f55fb30d9d58ba211ec68e64a6266e52"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/av",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0:0"
+            },
+            {
+              "fixed": "8.0:2020-08-01"
+            },
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2020-08-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2020-08-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2020-08-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.0",
+        "8.1",
+        "9",
+        "10"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/av/+/36a66d535b38245d386f2b5fd3ffbdcbbd0f3289",
+          "https://android.googlesource.com/platform/frameworks/av/+/e5767553f55fb30d9d58ba211ec68e64a6266e52"
+        ],
+        "spl": "2020-08-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-151644303.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-170212632",
+  "summary": "[UAF problem found in apexd]",
+  "details": "In LazyServiceRegistrar of LazyServiceRegistrar.cpp, there is a possible memory corruption due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0310"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-01-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-01-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/dc6cb05ebe2cefdce215d797a8e418ba26c8c86c"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/native",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-01-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/native/+/dc6cb05ebe2cefdce215d797a8e418ba26c8c86c"
+        ],
+        "spl": "2021-01-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-170212632.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

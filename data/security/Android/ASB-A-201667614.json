@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-201667614",
+  "summary": "[Media Provider] Security Report - [EoP: Bypass Storage Restriction in Android 11]",
+  "details": "In multiple locations of MediaProvider.java, there is a possible way to get read/write access to other applications\u2019 dedicated, app-specific directory within external storage due to a missing permission check. This could lead to local escalation of privilege with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-39795"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-12-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/providers/MediaProvider/+/bb4ec053ea16931e827f30c7b697cb35185a32be"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/providers/MediaProvider",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-12-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-12-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-12-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2022-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/providers/MediaProvider/+/bb4ec053ea16931e827f30c7b697cb35185a32be"
+        ],
+        "spl": "2022-12-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-201667614.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

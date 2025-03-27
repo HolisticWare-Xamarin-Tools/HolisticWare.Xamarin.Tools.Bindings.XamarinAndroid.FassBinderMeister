@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-204077881",
+  "summary": "[Out of bounds read in AAVCAssembler::checkSpsUpdated function in AAVCAssembler.cpp in libstagefright_rtsp]",
+  "details": "In checkSpsUpdated of AAVCAssembler.cpp, there is a possible out of bounds read due to a heap buffer overflow. This could lead to remote information disclosure with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2021-39665"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-02-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-02-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+/d0e524f58873f81549c7abfade30d8c9d2406a1c"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/av",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-02-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/av/+/d0e524f58873f81549c7abfade30d8c9d2406a1c"
+        ],
+        "spl": "2022-02-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-204077881.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

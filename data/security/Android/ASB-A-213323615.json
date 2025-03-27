@@ -1,0 +1,84 @@
+{
+  "id": "ASB-A-213323615",
+  "summary": "privilege escalation - obtain dangerous system permissions silently through duplicate permission declarations",
+  "details": "In declareDuplicatePermission of ParsedPermissionUtils.java, there is a possible way to obtain a dangerous permission without user consent due to improper input validation. This could lead to local escalation of privilege during app installation or upgrade with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20392"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-09-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-09-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/745e31e1be11d0b2f005590c4d448a8cb9bfbe35"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/548edbb850227e076735615f83f8e23352b0b82d"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2022-09-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-09-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-09-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-09-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11",
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/745e31e1be11d0b2f005590c4d448a8cb9bfbe35",
+          "https://android.googlesource.com/platform/frameworks/base/+/548edbb850227e076735615f83f8e23352b0b82d"
+        ],
+        "spl": "2022-09-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-213323615.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

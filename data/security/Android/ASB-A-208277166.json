@@ -1,0 +1,68 @@
+{
+  "id": "ASB-A-208277166",
+  "summary": "ION-UAF in ion common driver",
+  "details": "In ion_ioctl of ion-ioctl.c, there is a possible way to leak kernel head data due to a use after free. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-39800"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/504e1d6ee65d5"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/a8200613c8c9f"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/c47385c73fced"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2022-04-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/504e1d6ee65d5",
+          "https://android.googlesource.com/kernel/common/+/a8200613c8c9f",
+          "https://android.googlesource.com/kernel/common/+/c47385c73fced"
+        ],
+        "spl": "2022-04-05",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-208277166.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

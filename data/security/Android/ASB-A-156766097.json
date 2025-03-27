@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-156766097",
+  "summary": "Silent Spectre-BTB outages in Linux for Android",
+  "details": "In spectre_v2_user_select_mitigation of bugs.c, there is a possible failure to enable a Spectre mitigation. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2020-10767"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-01-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-01-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/21998a351512eba4ed5969006f0c55882d995ada"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2021-01-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/21998a351512eba4ed5969006f0c55882d995ada"
+        ],
+        "spl": "2021-01-05",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-156766097.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

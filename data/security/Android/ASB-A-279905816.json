@@ -1,0 +1,72 @@
+{
+  "id": "ASB-A-279905816",
+  "summary": "WhatsApp able to use microphone even after permissions revoked & app force stop in Android 13 Pixel 6",
+  "details": "In startInput of AudioPolicyInterfaceImpl.cpp, there is a possible way of erroneously displaying the microphone privacy indicator due to a race condition. This could lead to false user expectations. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21262"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+/2c8973c39478cd3c8cf11d9f27cc0556a106d006"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/av",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-07-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-07-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-07-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/av/+/e7720b379bfaba648ab6d85c4c2df6f03ec854d3"
+        ],
+        "spl": "2023-07-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-279905816.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

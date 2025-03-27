@@ -1,0 +1,81 @@
+{
+  "id": "ASB-A-186803518",
+  "summary": "a2dp_codec_fuzz: Tag-mismatch in A2DP_BuildCodecHeaderSbc",
+  "details": "In A2DP_BuildCodecHeaderSbc of a2dp_sbc.cc, there is a possible out of bounds write due to a missing bounds check. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-20952"
+  ],
+  "modified": "2024-05-14T14:40:17Z",
+  "published": "2023-03-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-03-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/bf98f204564cb67268adb21a5c06148d59d90456"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Bluetooth",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-03-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-03-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-03-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-03-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/eb53b8cbf548873bea30cf0ac6a753d679be4511",
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/46dc2f111709cea06e41ae2943be3b8183281bdd",
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/cd5a404fa5c0b073de027f06c227ffa53773fd7d"
+        ],
+        "spl": "2023-03-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-186803518.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

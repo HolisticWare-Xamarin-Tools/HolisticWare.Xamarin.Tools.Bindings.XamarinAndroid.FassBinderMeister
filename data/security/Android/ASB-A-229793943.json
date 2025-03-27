@@ -1,0 +1,65 @@
+{
+  "id": "ASB-A-229793943",
+  "summary": "AlwaysOnHotwordDetector allows hotword detection without CAPTURE_AUDIO_HOTWORD permission",
+  "details": "In AlwaysOnHotwordDetector of AlwaysOnHotwordDetector.java, there is a possible way to access the microphone from the background due to a missing permission check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20446"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-11-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-11-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/335af8b598b3d94c537045d8207b773a56faeeae"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2022-11-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-11-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/335af8b598b3d94c537045d8207b773a56faeeae"
+        ],
+        "spl": "2022-11-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-229793943.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

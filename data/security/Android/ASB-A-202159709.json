@@ -1,0 +1,65 @@
+{
+  "id": "ASB-A-202159709",
+  "summary": "HWAddressSanitizer: tag-mismatch on address 0x004417270380 at pc 0x0063172a6b38",
+  "details": "In inotify_cb of events.cpp, there is a possible out of bounds write due to an incorrect bounds check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-39632"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-01-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-01-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/bootable/recovery/+/f0a760b3a154ad328c682ec8559287befff14945"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/bootable/recovery",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-01-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-01-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/bootable/recovery/+/f0a760b3a154ad328c682ec8559287befff14945"
+        ],
+        "spl": "2022-01-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-202159709.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

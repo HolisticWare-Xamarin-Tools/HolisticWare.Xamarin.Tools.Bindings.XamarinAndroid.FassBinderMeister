@@ -1,0 +1,72 @@
+{
+  "id": "ASB-A-242544249",
+  "summary": "Vulnerability: Package zlib affected by CVE-2022-37434 affecting GitOnBorg::android::platform::external::angle",
+  "details": "In inflate of inflate.c, there is a possible out of bounds write due to a heap buffer overflow. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21100"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/external/angle/+/6a020bf505f4eb6d860eccf72ae6d6b4c4b720e9"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/external/angle",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-04-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-04-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-04-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/external/angle/+/be373a02bd86e8eebae0b18e0d6a61d145ba8a2e"
+        ],
+        "spl": "2023-04-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-242544249.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

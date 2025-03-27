@@ -1,0 +1,72 @@
+{
+  "id": "ASB-A-147247775",
+  "summary": "Vulnerability: Auth Bypass in GServices",
+  "details": "In the permission declaration for com.google.android.providers.gsf.permission.WRITE_GSERVICES in AndroidManifest.xml, there is a possible permissions bypass. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2020-0122"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2020-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2020-07-01"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":unknown:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0:0"
+            },
+            {
+              "fixed": "8.0:2020-07-01"
+            },
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2020-07-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2020-07-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2020-07-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.0",
+        "8.1",
+        "9",
+        "10"
+      ],
+      "ecosystem_specific": {
+        "spl": "2020-07-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-147247775.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

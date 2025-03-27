@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-222166527",
+  "summary": "Native crash - com.google.android.projection.gearhead - signal 6 (SIGABRT)../libclang_rt.hwasan-aarch64-android.so (hwasan_tag_mismatch4)../libclang_rt.hwasan-aarch64-android.so (hwasan_tag_mismatch)../b...",
+  "details": "In GetResolvedMethod of entrypoint_utils-inl.h, there is a possible use after free due to a stale cache. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20502"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-12-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/art/+/1ee0290eed24868826ad99678cc58eee425ecba8"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/art",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2022-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/art/+/1ee0290eed24868826ad99678cc58eee425ecba8"
+        ],
+        "spl": "2022-12-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-222166527.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

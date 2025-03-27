@@ -1,0 +1,84 @@
+{
+  "id": "ASB-A-203229608",
+  "summary": "Sync adapters can be called directly by other apps",
+  "details": "In startSync of AbstractThreadedSyncAdapter.java, there is a possible way to access protected content of content providers due to a missing permission check. This could lead to local information disclosure with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20358"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-08-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-08-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/e86156084bcf92b6160577f48b5b2dd584349e2e"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/58270527d11ac7e5f07d337a402d8edf046a63ee"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2022-08-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-08-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-08-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-08-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11",
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/e86156084bcf92b6160577f48b5b2dd584349e2e",
+          "https://android.googlesource.com/platform/frameworks/base/+/58270527d11ac7e5f07d337a402d8edf046a63ee"
+        ],
+        "spl": "2022-08-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-203229608.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

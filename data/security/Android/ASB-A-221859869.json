@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-221859869",
+  "summary": "CRLF Injection in KeyChainActivity can trick user into disclosing keys in KeyChain",
+  "details": "In choosePrivateKeyAlias of KeyChain.java, there is a possible access to the user's certificate due to improper input validation. This could lead to local information disclosure with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20230"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/KeyChain/+/2184df9eef9ad67630d3540cb97e70ec61e8f65c"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/apps/KeyChain",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2022-07-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-07-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-07-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-07-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11",
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/apps/KeyChain/+/2184df9eef9ad67630d3540cb97e70ec61e8f65c"
+        ],
+        "spl": "2022-07-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-221859869.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-234442700",
+  "summary": "[Android 13 Beta] Fast Pair - Information disclosure of Bluetooth Model ID and MAC Address",
+  "details": "In sendHalfSheetCancelBroadcast of HalfSheetActivity.java, there is a possible way to learn nearby BT MAC addresses due to an unrestricted broadcast intent. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-20929"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-03-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-03-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Connectivity/+/be99ea27e22ef97aec9a95ba6d5f52e954e9f2a7"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Connectivity",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-03-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Connectivity/+/fdc92430972a9bff3ff209473343a1f87105dfb2"
+        ],
+        "spl": "2023-03-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-234442700.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

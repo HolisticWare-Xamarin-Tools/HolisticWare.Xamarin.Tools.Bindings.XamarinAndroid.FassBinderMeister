@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-141745510",
+  "summary": "Showing system windows without any permissions",
+  "details": "In addWindow of WindowManagerService.java, there is a possible window overlay attack due to an insecure default value. This could lead to local escalation of privilege via tapjacking with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2020-0099"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2020-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2020-12-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/d0746b46a5d8049a7105a16eb25c44810376527e"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0:0"
+            },
+            {
+              "fixed": "8.0:2020-12-01"
+            },
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2020-12-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2020-12-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2020-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.0",
+        "8.1",
+        "9",
+        "10"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/d0746b46a5d8049a7105a16eb25c44810376527e"
+        ],
+        "spl": "2020-12-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-141745510.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

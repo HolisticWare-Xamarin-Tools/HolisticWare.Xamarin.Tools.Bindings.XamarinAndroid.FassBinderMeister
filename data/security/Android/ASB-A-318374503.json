@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-318374503",
+  "summary": "Unauthenticated Bluetooth keystroke-injection in Pixel 7 running AP11.231117.006",
+  "details": "In access_secure_service_from_temp_bond of btm_sec.cc, there is a possible way to achieve keystroke injection due to improper input validation. This could lead to remote (proximal/adjacent) escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2024-23717"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2024-03-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2024-03-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/c5c528beb6e1cfed3ec93a3a264084df32ce83c2"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Bluetooth",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2024-03-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2024-03-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2024-03-01"
+            },
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2024-03-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L",
+        "13",
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/c5c528beb6e1cfed3ec93a3a264084df32ce83c2"
+        ],
+        "spl": "2024-03-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-318374503.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,65 @@
+{
+  "id": "ASB-A-219015884",
+  "summary": "Path traversal in CallLogProvider",
+  "details": "In openFile of CallLogProvider.java, there is a possible permission bypass due to a path traversal error. This could lead to local escalation of privilege with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20220"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/providers/ContactsProvider/+/0aba93d7d0a92a277f540fec7d5b04b2850fa184"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/providers/ContactsProvider",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-07-05"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-07-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/providers/ContactsProvider/+/0aba93d7d0a92a277f540fec7d5b04b2850fa184"
+        ],
+        "spl": "2022-07-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-219015884.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

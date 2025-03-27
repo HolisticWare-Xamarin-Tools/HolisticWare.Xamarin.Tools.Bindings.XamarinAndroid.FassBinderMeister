@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-174046397",
+  "summary": "[Overlay drawing on top of Copy Calendar database warning dialog]",
+  "details": "In onCreate of CalendarDebugActivity.java, there is a possible way to export calendar data to the sdcard without user consent due to a tapjacking/overlay attack. This could lead to local escalation of privilege with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0487"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-05-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-05-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/providers/CalendarProvider/+/8cddb2643dd823721ba5c897a089d06c56b50a60"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/providers/CalendarProvider",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-05-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/providers/CalendarProvider/+/8cddb2643dd823721ba5c897a089d06c56b50a60"
+        ],
+        "spl": "2021-05-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-174046397.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,84 @@
+{
+  "id": "ASB-A-160265164",
+  "summary": "invalid EAC3 compressed audio frame size not detected",
+  "details": "In SPDIFEncoder::writeBurstBufferBytes and related methods of SPDIFEncoder.cpp, there is a possible out of bounds write due to an integer overflow. This could lead to remote code execution with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2020-0458"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2020-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2020-12-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/system/media/+/4523a5863f7d8f449600e85e946cfdc9cff408b2"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/system/media/+/1f73a728ef4b6d7d350c0715bdb10d59e5b5f9be"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/system/media",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.0:0"
+            },
+            {
+              "fixed": "8.0:2020-12-01"
+            },
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2020-12-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2020-12-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2020-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.0",
+        "8.1",
+        "9",
+        "10"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/system/media/+/4523a5863f7d8f449600e85e946cfdc9cff408b2",
+          "https://android.googlesource.com/platform/system/media/+/1f73a728ef4b6d7d350c0715bdb10d59e5b5f9be"
+        ],
+        "spl": "2020-12-01",
+        "types": [
+          "RCE"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-160265164.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

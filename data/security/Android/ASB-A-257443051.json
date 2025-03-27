@@ -1,0 +1,88 @@
+{
+  "id": "ASB-A-257443051",
+  "summary": "GKI kernels contain broken non-upstream Speculative Page Faults MM code",
+  "details": "In several functions of the Android Linux kernel, there is a possible way to corrupt memory due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-20937"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-02-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-02-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/50d2b75b860a6495aac6127a27f75b309e91b689"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/5844c8e7aaa946341f0d30441adc8f2cd97efbfc"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/4ea18cd059a4986a6a6f94a7f6d019b750bece65"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/ca96bd7bf10e62eccc583726be502f219ab02c1e"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/533a88fed7d0107eff64d723d853e9a2c4a1053c"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/a1f65b39ba08a0f24bde9f07921ff48277761132"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/3f311327f910e5c73d5bd602a80afcad371e83cd"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2023-02-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/50d2b75b860a6495aac6127a27f75b309e91b689",
+          "https://android.googlesource.com/kernel/common/+/5844c8e7aaa946341f0d30441adc8f2cd97efbfc",
+          "https://android.googlesource.com/kernel/common/+/4ea18cd059a4986a6a6f94a7f6d019b750bece65",
+          "https://android.googlesource.com/kernel/common/+/ca96bd7bf10e62eccc583726be502f219ab02c1e",
+          "https://android.googlesource.com/kernel/common/+/533a88fed7d0107eff64d723d853e9a2c4a1053c",
+          "https://android.googlesource.com/kernel/common/+/a1f65b39ba08a0f24bde9f07921ff48277761132",
+          "https://android.googlesource.com/kernel/common/+/3f311327f910e5c73d5bd602a80afcad371e83cd"
+        ],
+        "spl": "2023-02-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-257443051.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,73 @@
+{
+  "id": "ASB-A-158762825",
+  "summary": "aac_dec_fuzzer: Index-out-of-bounds with empty stacktrace",
+  "details": "In sbrDecoder_AssignQmfChannels2SbrChannels of sbrdecoder.cpp, there is a possible out of bounds write due to a heap buffer overflow. This could lead to remote code execution with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2020-0451"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2020-11-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2020-11-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/external/aac/+/ffff95538e9994d312ffdfbba94d88ed226ef7bf"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/external/aac",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2020-11-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2020-11-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2020-11-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "9",
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/external/aac/+/ffff95538e9994d312ffdfbba94d88ed226ef7bf"
+        ],
+        "spl": "2020-11-01",
+        "types": [
+          "ID",
+          "RCE"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-158762825.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

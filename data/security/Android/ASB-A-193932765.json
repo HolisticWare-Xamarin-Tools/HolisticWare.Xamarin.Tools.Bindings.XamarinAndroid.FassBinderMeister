@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-193932765",
+  "summary": "Mainline train application can result in all apexes getting reset to factory version",
+  "details": "In RevertActiveSessions of apexd.cpp, there is a possible way to share the wrong file due to an unintentional MediaStore downgrade. This could lead to local information disclosure with no additional execution privileges needed. User interaction is needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0702"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-10-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-10-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/system/apex/+/04bc18a50f900652ff9c07590d12809fc111a451"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/system/apex",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-10-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/system/apex/+/04bc18a50f900652ff9c07590d12809fc111a451"
+        ],
+        "spl": "2021-10-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-193932765.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

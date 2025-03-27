@@ -1,0 +1,93 @@
+{
+  "id": "ASB-A-189942529",
+  "summary": "Possible Vulnerability in Work Profile Provisioning",
+  "details": "In onSetRuntimePermissionGrantStateByDeviceAdmin of AdminRestrictedPermissionsUtils.java, there is a possible way for the work profile to read SMS messages due to a permissions bypass. This could lead to local information disclosure with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-20914"
+  ],
+  "modified": "2024-05-14T14:40:19Z",
+  "published": "2023-05-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-05-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/0b486e312fd0dd041cb29113ade3517fba1783c7"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-05-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/7f632dca959784127235e1e7ff138cb62684137f"
+        ],
+        "spl": "2023-05-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-189942529.json"
+      }
+    },
+    {
+      "package": {
+        "name": "platform/packages/modules/Permission",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-05-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Permission/+/6ab6787a10aab9f1fb26c27a0307a3a13877458d"
+        ],
+        "spl": "2023-05-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-189942529.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

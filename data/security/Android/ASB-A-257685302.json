@@ -1,0 +1,83 @@
+{
+  "id": "ASB-A-257685302",
+  "summary": "[Binder][bug] Incorrect bound check in `binder_transaction_buffer_release` in binder.c",
+  "details": "In binder_transaction_buffer_release of binder.c, there is a possible use after free due to improper input validation. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-20938"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-02-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-02-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/baa23246e93f"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/3d213a626d2d"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/9d1efccf5ec3"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/b83173bf86a9"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/aaf236971732"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/ecf61e4e1117"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2023-02-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/baa23246e93f",
+          "https://android.googlesource.com/kernel/common/+/3d213a626d2d",
+          "https://android.googlesource.com/kernel/common/+/9d1efccf5ec3",
+          "https://android.googlesource.com/kernel/common/+/b83173bf86a9",
+          "https://android.googlesource.com/kernel/common/+/aaf236971732",
+          "https://android.googlesource.com/kernel/common/+/ecf61e4e1117"
+        ],
+        "spl": "2023-02-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-257685302.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

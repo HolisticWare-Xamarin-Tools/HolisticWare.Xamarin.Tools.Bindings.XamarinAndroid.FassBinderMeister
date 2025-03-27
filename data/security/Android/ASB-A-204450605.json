@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-204450605",
+  "summary": "Upstream linux vulnerability in epoll",
+  "details": "In fs/eventpoll.c, there is a possible use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-39634"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-01-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-01-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/f8d4f44df056c5b504b0d49683fb7279218fd207"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2022-01-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/f8d4f44df056c5b504b0d49683fb7279218fd207"
+        ],
+        "spl": "2022-01-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-204450605.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

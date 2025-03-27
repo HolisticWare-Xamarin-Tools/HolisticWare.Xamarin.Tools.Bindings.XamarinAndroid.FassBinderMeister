@@ -1,0 +1,89 @@
+{
+  "id": "ASB-A-218495634",
+  "summary": "Lockdown vs. Screen pinning mode",
+  "details": "In multiple functions of KeyguardViewMediator.java, there is a possible way to bypass lockdown mode with screen pinning due to a logic error in the code. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21267"
+  ],
+  "modified": "2024-05-14T14:40:20Z",
+  "published": "2024-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2024-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/cecddcd865f72d76f7aacb1cf4479365847299f9"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/cb7e9c7549a2a076ec00db15e3da0d21b31b0b1c"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/e205cd30e91d8eeadf562140c34c306ebf7d6394"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2024-04-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2024-04-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2024-04-01"
+            },
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2024-04-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L",
+        "13",
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/6962dbcd2eaf91552eb243aff0c0b95e567d27ca",
+          "https://android.googlesource.com/platform/frameworks/base/+/eaa129138096bc00b663bca93a5af9786aa47154",
+          "https://android.googlesource.com/platform/frameworks/base/+/5fba6ecb07c70dfc229a63249bf105c09ebea5b3"
+        ],
+        "spl": "2024-04-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-218495634.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

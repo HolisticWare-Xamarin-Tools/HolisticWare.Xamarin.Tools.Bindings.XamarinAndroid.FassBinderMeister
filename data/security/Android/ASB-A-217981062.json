@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-217981062",
+  "summary": "Improve one-time permissions handling and revoking mechanism to prevent security issues",
+  "details": "In multiple functions of OneTimePermissionUserManager.java, there is a possible one-time permission retention due to a permissions bypass. This could lead to local escalation of privilege with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21249"
+  ],
+  "modified": "2024-05-14T14:40:17Z",
+  "published": "2023-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/c00b7e7dbc1fa30339adef693d02a51254755d7f"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-07-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/618641451d724572597024cd5ced7e46fc801c2c"
+        ],
+        "spl": "2023-07-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-217981062.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

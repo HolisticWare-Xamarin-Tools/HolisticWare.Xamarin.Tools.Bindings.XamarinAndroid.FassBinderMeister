@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-185178568",
+  "summary": "crash in com.google.android.apps.safetyhub; HWASAN CTS: HWAddressSanitizer: tag-mismatch on address 0x003d80fb1328 at pc 0x007e75d72248 WRITE of size 4 at 0x003d80fb1328 tags: 07/61 (ptr/mem) in thread T648",
+  "details": "In VectorDrawable::VectorDrawable of VectorDrawable.java, there is a possible way to introduce a memory corruption due to sharing of not thread-safe objects. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0652"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-10-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-10-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/0c4bc631f2e09ccd0712da39b3e1a6c4eaf52a65"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2021-10-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-10-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-10-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-10-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.1",
+        "9",
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/0c4bc631f2e09ccd0712da39b3e1a6c4eaf52a65"
+        ],
+        "spl": "2021-10-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-185178568.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

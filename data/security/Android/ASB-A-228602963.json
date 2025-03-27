@@ -1,0 +1,86 @@
+{
+  "id": "ASB-A-228602963",
+  "summary": "[Out of Bounds Read in pin_reply Function in bluetooth.cc in Bluetooth]",
+  "details": "In pinReplyNative of com_android_bluetooth_btservice_AdapterService.cpp, there is a possible out of bounds read due to type confusion. This could lead to local escalation of privilege of BLE with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20461"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-01-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-01-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/2c09d202c83af6a511ad29ead37f4055760f095f"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/modules/Bluetooth",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2023-01-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-01-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-01-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-01-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-01-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/modules/Bluetooth/+/2c09d202c83af6a511ad29ead37f4055760f095f"
+        ],
+        "spl": "2023-01-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-228602963.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-278221085",
+  "summary": "Heap buffer overflow in FreeType",
+  "details": "In multiple locations, there is a possible code execution due to type confusion. This could lead to remote code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21287"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-08-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-08-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/external/freetype/+/a79e80a25874dacaa266906a9048f13d4bac41c6"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/external/freetype",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-08-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-08-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-08-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-08-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/external/freetype/+/9fe9411db4b7e715a39c0ccf48d1e0328f1d8e7c"
+        ],
+        "spl": "2023-08-01",
+        "types": [
+          "RCE"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-278221085.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

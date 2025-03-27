@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-156090809",
+  "summary": "App can be made foreground without showing notification to user (even by android system )",
+  "details": "In deleteNotificationChannel and related functions of NotificationManagerService.java, there is a possible permission bypass due to improper state validation. This could lead to local escalation of privilege via hidden services with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0513"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-06-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-06-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/8cb7e0a881fed2a7d80b69aed77275bd483043ad"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2021-06-05"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-06-05"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-06-05"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-06-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.1",
+        "9",
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/8cb7e0a881fed2a7d80b69aed77275bd483043ad"
+        ],
+        "spl": "2021-06-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-156090809.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

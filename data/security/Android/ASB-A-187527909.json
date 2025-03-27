@@ -1,0 +1,68 @@
+{
+  "id": "ASB-A-187527909",
+  "summary": "[UAF in mtk apusys driver because of ION driver interface]",
+  "details": "In ion_dma_buf_end_cpu_access and related functions of ion.c, there is a possible way to corrupt memory due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0929"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-11-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-11-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/41a097c0ed6658bf451c5cf993ab0469eb1ce4a5"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/6c5bc69f722cb5e2fe47196ee8f1aabe6498f8a7"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/212b4d3a42674d2cf366bd7b06fe9faae03477fc"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2021-11-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/41a097c0ed6658bf451c5cf993ab0469eb1ce4a5",
+          "https://android.googlesource.com/kernel/common/+/6c5bc69f722cb5e2fe47196ee8f1aabe6498f8a7",
+          "https://android.googlesource.com/kernel/common/+/212b4d3a42674d2cf366bd7b06fe9faae03477fc"
+        ],
+        "spl": "2021-11-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-187527909.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

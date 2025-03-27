@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-183147114",
+  "summary": "While-in-use FGS permissions re-granted even after FGS calls stopForeground() / startForeground()",
+  "details": "In setServiceForegroundInnerLocked of ActiveServices.java, there is a possible way for a background application to regain foreground permissions due to insufficient background restrictions. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0694"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/5d30b701587920280c12210af22f3457b802da6e"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-04-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/5d30b701587920280c12210af22f3457b802da6e"
+        ],
+        "spl": "2022-04-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-183147114.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

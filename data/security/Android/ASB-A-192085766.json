@@ -1,0 +1,51 @@
+{
+  "id": "ASB-A-192085766",
+  "summary": "Native crash - com.google.android.providers.media.module (System process) - signal 11 (SIGSEGV)../MediaProviderGoogle.<dex|apk>!libfuse_jni.so (mediaprovider::fuse::pf_write_buf)../MediaProviderGoogle.<dex|apk>!libfuse.so (d...",
+  "details": "In pf_write_buf of FuseDaemon.cpp, there is possible memory corruption due to a race condition. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0955"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-12-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-12-01"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":unknown:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-12-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "spl": "2021-12-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-192085766.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

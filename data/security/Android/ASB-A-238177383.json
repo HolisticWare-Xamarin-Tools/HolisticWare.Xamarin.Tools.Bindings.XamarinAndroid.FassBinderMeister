@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-238177383",
+  "summary": "An android kernel bug that allows to bypass all protection bypass and achieve privilege escalation",
+  "details": "In io_identity_cow of io_uring.c, there is a possible way to corrupt memory due to a use after free. This could lead to local escalation of privilege with System execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20409"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-10-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-10-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/0380da7fd63ac93caf96a75d1b31e388d3c754e9"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2022-10-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/0380da7fd63ac93caf96a75d1b31e388d3c754e9"
+        ],
+        "spl": "2022-10-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "Moderate"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-238177383.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

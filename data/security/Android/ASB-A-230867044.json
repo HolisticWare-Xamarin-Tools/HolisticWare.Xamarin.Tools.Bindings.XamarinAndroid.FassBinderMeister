@@ -1,0 +1,64 @@
+{
+  "id": "ASB-A-230867044",
+  "summary": "[local root on the latest Pixel6]",
+  "details": "In io_match_task of io_uring.c, there is a possible arbitrary code execution due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "ASB-A-233078742",
+    "CVE-2022-1786"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-10-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-10-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/812805ff3b0c7"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/29f077d070519"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2022-10-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/812805ff3b0c7",
+          "https://android.googlesource.com/kernel/common/+/29f077d070519"
+        ],
+        "spl": "2022-10-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-230867044.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

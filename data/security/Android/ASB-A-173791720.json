@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-173791720",
+  "summary": "[UAF problem found in system_server in MediaCodec::ResourceManagerServiceProxy::binderDied()]",
+  "details": "In BinderDiedCallback of MediaCodec.cpp, there is a possible memory corruption due to a use after free. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0482"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-05-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-05-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+/57d90982aa7a18a8c76c8dcc418c8da51a71aa9d"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/av",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-05-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/av/+/57d90982aa7a18a8c76c8dcc418c8da51a71aa9d"
+        ],
+        "spl": "2021-05-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-173791720.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

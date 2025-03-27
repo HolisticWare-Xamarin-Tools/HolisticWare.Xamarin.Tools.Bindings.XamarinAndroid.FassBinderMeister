@@ -1,0 +1,75 @@
+{
+  "id": "ASB-A-250589026",
+  "summary": "Potential Intent Redirection issue in SettingsActivity of Settings app",
+  "details": "In launchDeepLinkIntentToRight of SettingsHomepageActivity.java, there is a possible way to launch arbitrary activities due to improper input validation. This could lead to local escalation of privilege with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-20960"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-03-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-03-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/23412ad94a4f74d93d9daf3271d4c013c6fb8e58"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/f964b68feee28f29e284221cd9c902a8abbb2dc7"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Settings/+/95ff0752446fa7da96e60f1aa1bdacf104907764"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/apps/Settings",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-03-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-03-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/c3141fa91147fc0d9128f11071bd646d049f4b5a",
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/1a49146508c82f719a8f500b1b7d50d90d1f57cb",
+          "https://android.googlesource.com/platform/packages/apps/Settings/+/0c18e8990c8cff93798fca7efb4fd06beb6611bd"
+        ],
+        "spl": "2023-03-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-250589026.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

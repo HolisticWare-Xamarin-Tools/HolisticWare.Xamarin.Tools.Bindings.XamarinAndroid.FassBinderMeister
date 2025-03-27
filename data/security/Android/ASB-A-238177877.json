@@ -1,0 +1,89 @@
+{
+  "id": "ASB-A-238177877",
+  "summary": "[nfc_nci_nxp.so OOB Read Vulnerability]",
+  "details": "In SendIncDecRestoreCmdPart2 of NxpMfcReader.cc, there is a possible out of bounds read due to a missing bounds check. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20471"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-04-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-04-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/hardware/nxp/nfc/+/1164ee536ecf6504e73dcaac0ccb1ee887f3a19c"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/hardware/nxp/nfc/+/50779bfee26842816f0c241f5dc5a8b8b5f12f37"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/hardware/nxp/nfc/+/334645060efe1ef0889385512f74513ea1bb29a2"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/hardware/nxp/nfc",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-04-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-04-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-04-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-04-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/hardware/nxp/nfc/+/a83beb0b215147a80f6ecf44674b7c8d415a923c",
+          "https://android.googlesource.com/platform/hardware/nxp/nfc/+/d149359fadcf341fc3003d93b35122dbfa14ff65",
+          "https://android.googlesource.com/platform/hardware/nxp/nfc/+/253cda9827d63aab0c537f6cc095f507e646116a"
+        ],
+        "spl": "2023-04-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-238177877.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

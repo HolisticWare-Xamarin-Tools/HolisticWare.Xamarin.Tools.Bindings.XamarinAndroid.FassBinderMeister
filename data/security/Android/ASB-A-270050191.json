@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-270050191",
+  "summary": "[ADP Grant] System Tracing can be used even if DISALLOW_DEBUGGING_FEATURES has been applied (MainTvActivity)",
+  "details": "In various functions of various files, there is a possible way to bypass the DISALLOW_DEBUGGING_FEATURES restriction for tracing due to a missing permission check. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2023-21122"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-06-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-06-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/apps/Traceur/+/0cbd2103660d24abec9064f6a343151eb405b156"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/apps/Traceur",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-06-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-06-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2023-06-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2023-06-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12",
+        "12L",
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/apps/Traceur/+/44480ce656dfa33a63bda978b4067bb4e67ee312"
+        ],
+        "spl": "2023-06-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-270050191.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

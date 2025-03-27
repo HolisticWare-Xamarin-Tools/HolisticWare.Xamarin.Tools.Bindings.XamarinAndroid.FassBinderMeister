@@ -1,0 +1,80 @@
+{
+  "id": "ASB-A-176533109",
+  "summary": "avc_enc_fuzzer: Heap-buffer-overflow in ih264e_put_bits",
+  "details": "In BITSTREAM_FLUSH of ih264e_bitstream.h, there is a possible out of bounds write due to a heap buffer overflow. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0519"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-08-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-08-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/external/libavc/+/10910bf9106eff724390255faa48f9f61dcfc744"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/external/libavc",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "8.1:0"
+            },
+            {
+              "fixed": "8.1:2021-08-01"
+            },
+            {
+              "introduced": "9:0"
+            },
+            {
+              "fixed": "9:2021-08-01"
+            },
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2021-08-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-08-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "8.1",
+        "9",
+        "10",
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/external/libavc/+/10910bf9106eff724390255faa48f9f61dcfc744"
+        ],
+        "spl": "2021-08-01",
+        "types": [
+          "EoP",
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-176533109.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

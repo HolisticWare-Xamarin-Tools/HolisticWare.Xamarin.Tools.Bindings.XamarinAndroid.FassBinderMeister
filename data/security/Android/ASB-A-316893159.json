@@ -1,0 +1,80 @@
+{
+  "id": "ASB-A-316893159",
+  "summary": "Privilege Escalation Vulnerability in AccountManager Due to Persistent Elevated Application Priority",
+  "details": "In Session of AccountManagerService.java, there is a possible method to retain foreground service privileges due to incorrect handling of null responses. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2024-0048"
+  ],
+  "modified": "2024-05-14T14:40:16Z",
+  "published": "2024-03-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2024-03-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/2c236cde5505ee0e88cf1e3d073e2f1a53f0eede"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2024-03-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2024-03-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2024-03-01"
+            },
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2024-03-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L",
+        "13",
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/c1b2d61dd84467ba2621a17718761ad4949dfd5e",
+          "https://android.googlesource.com/platform/frameworks/base/+/89af0a39c23abf0464a96e5ba7eec332b675a69e"
+        ],
+        "spl": "2024-03-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-316893159.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

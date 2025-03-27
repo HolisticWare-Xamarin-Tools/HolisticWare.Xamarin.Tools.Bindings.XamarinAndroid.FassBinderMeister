@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-221862119",
+  "summary": "[Double Free in ce_t4t_data_cback Function in ce_t4t.cc in nfc]",
+  "details": "In ce_t4t_data_cback of ce_t4t.cc, there is a possible out of bounds write due to a double free. This could lead to remote code execution with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20127"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-06-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-06-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/system/nfc/+/2fcf7d677bcebae5a00db43938460bcce267149e"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/system/nfc",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2022-06-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-06-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-06-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-06-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11",
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/system/nfc/+/2fcf7d677bcebae5a00db43938460bcce267149e"
+        ],
+        "spl": "2022-06-01",
+        "types": [
+          "RCE"
+        ],
+        "severity": "Critical"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-221862119.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

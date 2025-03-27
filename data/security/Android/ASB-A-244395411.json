@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-244395411",
+  "summary": "Linux kernel vulnerability advisory",
+  "details": "In pipe_resize_results of pipe.c, there is a possible UAF bug caused by a race condition. This could lead to local denial of service and local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation. ",
+  "aliases": [
+    "CVE-2022-2959"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2023-01-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-01-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/a2c2b6c91475908e2ac90a3d70f5d12ae86b8033"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2023-01-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/a2c2b6c91475908e2ac90a3d70f5d12ae86b8033"
+        ],
+        "spl": "2023-01-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-244395411.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

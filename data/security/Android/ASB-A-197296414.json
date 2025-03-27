@@ -1,0 +1,126 @@
+{
+  "id": "ASB-A-197296414",
+  "summary": "Toasts can still be made touchable",
+  "details": "In several functions of inputDispatcher.cpp, there is a possible way to make toasts clickable due to a tapjacking/overlay attack. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20444"
+  ],
+  "modified": "2024-05-14T14:40:21Z",
+  "published": "2023-05-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2023-05-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/062a867e94dbf811ccca02e7a6a0f0e36465694a"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/9cf4a4d4e57d059a4e4119f0a8f2a8be237f28c2"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/3b8aa02ba51f26161519f6465515f619e663bbbf"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/d100067fd62adb4648e966b3306b9a2f3b1fd38e"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/native/+/a066d908f6fe28e63ae49327b57fcd31d63fba2d"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-05-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-05-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/3b8aa02ba51f26161519f6465515f619e663bbbf",
+          "https://android.googlesource.com/platform/frameworks/base/+/d100067fd62adb4648e966b3306b9a2f3b1fd38e"
+        ],
+        "spl": "2023-05-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-197296414.json"
+      }
+    },
+    {
+      "package": {
+        "name": "platform/frameworks/native",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2023-05-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2023-05-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11",
+        "12"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/native/+/9cf4a4d4e57d059a4e4119f0a8f2a8be237f28c2",
+          "https://android.googlesource.com/platform/frameworks/native/+/062a867e94dbf811ccca02e7a6a0f0e36465694a",
+          "https://android.googlesource.com/platform/frameworks/native/+/a066d908f6fe28e63ae49327b57fcd31d63fba2d"
+        ],
+        "spl": "2023-05-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-197296414.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

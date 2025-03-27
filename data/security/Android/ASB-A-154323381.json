@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-154323381",
+  "summary": "[PendingIntent in Voicemail Notification could be Hijacked to Access Telephony Protected Provider]",
+  "details": "In updateMwi of NotificationMgr.java, there is a possible permission bypass due to a PendingIntent error. This could lead to local information disclosure with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2020-0398"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2020-10-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2020-10-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/packages/services/Telephony/+/b722e6d0bef5bdcf3cf7368b765ed08a98bdee1c"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/packages/services/Telephony",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2020-10-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/packages/services/Telephony/+/b722e6d0bef5bdcf3cf7368b765ed08a98bdee1c"
+        ],
+        "spl": "2020-10-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-154323381.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

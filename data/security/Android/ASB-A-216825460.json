@@ -1,0 +1,63 @@
+{
+  "id": "ASB-A-216825460",
+  "summary": "RNDIS USB Gadget used by Android to provide USB tethering functionality may be exploited to dump kernel memory contents.",
+  "details": "In USB driver, there is a possible out of bounds read due to a heap buffer overflow. This could lead to local information disclosure with User execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20227"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/7193ad3e50e59"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/fb4ff0f96de37"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2022-07-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/7193ad3e50e59",
+          "https://android.googlesource.com/kernel/common/+/fb4ff0f96de37"
+        ],
+        "spl": "2022-07-05",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-216825460.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

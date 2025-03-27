@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-243924784",
+  "summary": "Installer apps that target SDK 33 are not able to install apps that use obb files",
+  "details": "In getMountModeInternal of StorageManagerService.java, there is a possible prevention of package installation due to improper input validation. This could lead to local escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20457"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-11-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-11-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/base/+/80c15ed6591620034386a190d833cee829e4aace"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/base",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2022-11-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "13"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/base/+/80c15ed6591620034386a190d833cee829e4aace"
+        ],
+        "spl": "2022-11-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-243924784.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

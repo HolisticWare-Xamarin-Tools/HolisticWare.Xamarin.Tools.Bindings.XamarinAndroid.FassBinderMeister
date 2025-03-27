@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-170658976",
+  "summary": "flaw in Linux kernel's implementation of Userspace core dumps",
+  "details": "In fill_thread_core_info of binfmt_elf.c, there is a possible leak of kernel heap memory due to uninitialized data. This could lead to local information disclosure to an application core dump with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2020-10732"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-01-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-01-01"
+    },
+    {
+      "type": "FIX",
+      "url": "http://android.googlesource.com/kernel/common/+/1d605416fb7175e1adf094251466caa52093b413"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2021-01-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "http://android.googlesource.com/kernel/common/+/1d605416fb7175e1adf094251466caa52093b413"
+        ],
+        "spl": "2021-01-05",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-170658976.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

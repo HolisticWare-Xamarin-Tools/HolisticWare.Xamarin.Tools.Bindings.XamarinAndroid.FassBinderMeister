@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-273935108",
+  "summary": "[Out of Bounds Write in kDescribeHdr10PlusInfoIndex case in getConfig in SoftVideoDecoderOMXComponent.cpp in libstagefright_softomx]",
+  "details": "In getConfig of SoftVideoDecoderOMXComponent.cpp, there is a possible out of bounds write due to a missing validation check. This could lead to a local non-security issue with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2024-0050"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2024-03-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2024-03-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/av/+/8f3bc8be16480367bac36effa25706133a0dc22d"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/av",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2024-03-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2024-03-01"
+            },
+            {
+              "introduced": "13:0"
+            },
+            {
+              "fixed": "13:2024-03-01"
+            },
+            {
+              "introduced": "14:0"
+            },
+            {
+              "fixed": "14:2024-03-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "12",
+        "12L",
+        "13",
+        "14"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/av/+/a542f2c50700ca6df93e966fe8d4c468e1a15d9a"
+        ],
+        "spl": "2024-03-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-273935108.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

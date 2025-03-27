@@ -1,0 +1,79 @@
+{
+  "id": "ASB-A-213457638",
+  "summary": "Possible Security Report - App can read group uuid of sim card(s) without requiring READ_PRIVILEGED_PHONE_STATE permission.",
+  "details": "In getSubscriptionProperty of SubscriptionController.java, there is a possible read of a sensitive identifier due to a missing permission check. This could lead to local information disclosure with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2022-20225"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2022-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2022-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/frameworks/opt/telephony/+/37d1a266646b4fedda3bcab73eb1c1f01285c4be"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/frameworks/opt/telephony",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "10:0"
+            },
+            {
+              "fixed": "10:2022-07-01"
+            },
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2022-07-01"
+            },
+            {
+              "introduced": "12:0"
+            },
+            {
+              "fixed": "12:2022-07-01"
+            },
+            {
+              "introduced": "12L:0"
+            },
+            {
+              "fixed": "12L:2022-07-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "10",
+        "11",
+        "12",
+        "12L"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/frameworks/opt/telephony/+/37d1a266646b4fedda3bcab73eb1c1f01285c4be"
+        ],
+        "spl": "2022-07-01",
+        "types": [
+          "ID"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-213457638.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-184569329",
+  "summary": "[S-Preview2] connecting and disconnecting a keyboard with hwasan build of aosp master triggers a crash .",
+  "details": "In SecondStageMain of init.cpp, there is a possible use after free due to incorrect shared_ptr usage. This could lead to local escalation of privilege if the attacker has physical access to the device, with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2021-0703"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2021-10-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2021-10-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/platform/system/core/+/9792338c6c2b899ff708e4938e93d8e429d50442"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": "platform/system/core",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": "11:0"
+            },
+            {
+              "fixed": "11:2021-10-01"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "11"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/platform/system/core/+/9792338c6c2b899ff708e4938e93d8e429d50442"
+        ],
+        "spl": "2021-10-01",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-184569329.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}

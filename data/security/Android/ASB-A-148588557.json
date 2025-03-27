@@ -1,0 +1,58 @@
+{
+  "id": "ASB-A-148588557",
+  "summary": "Android Vomit Report",
+  "details": "In __flow_hash_from_keys of flow_dissector.c, there is a possible packet injection due to improperly used crypto. This could lead to remote escalation of privilege with no additional execution privileges needed. User interaction is not needed for exploitation.",
+  "aliases": [
+    "CVE-2019-18282"
+  ],
+  "modified": "2024-05-14T14:40:15Z",
+  "published": "2020-07-01T00:00:00Z",
+  "references": [
+    {
+      "type": "ADVISORY",
+      "url": "https://source.android.com/security/bulletin/2020-07-01"
+    },
+    {
+      "type": "FIX",
+      "url": "https://android.googlesource.com/kernel/common/+/55667441c84fa5e0911a0aac44fb059c15ba6da2"
+    }
+  ],
+  "affected": [
+    {
+      "package": {
+        "name": ":linux_kernel:",
+        "ecosystem": "Android"
+      },
+      "ranges": [
+        {
+          "type": "ECOSYSTEM",
+          "events": [
+            {
+              "introduced": ":0"
+            },
+            {
+              "fixed": ":2020-07-05"
+            }
+          ]
+        }
+      ],
+      "versions": [
+        "Kernel"
+      ],
+      "ecosystem_specific": {
+        "fixes": [
+          "https://android.googlesource.com/kernel/common/+/55667441c84fa5e0911a0aac44fb059c15ba6da2"
+        ],
+        "spl": "2020-07-05",
+        "types": [
+          "EoP"
+        ],
+        "severity": "High"
+      },
+      "database_specific": {
+        "source": "https://storage.googleapis.com/android-osv/ASB-A-148588557.json"
+      }
+    }
+  ],
+  "schema_version": "1.6.0"
+}
