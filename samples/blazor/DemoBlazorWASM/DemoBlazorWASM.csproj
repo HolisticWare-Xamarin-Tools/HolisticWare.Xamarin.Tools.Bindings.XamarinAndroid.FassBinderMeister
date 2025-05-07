@@ -13,7 +13,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
 
-    <PackageReference Include="NuGet.Protocol" Version="6.2.2" />
+    <PackageReference Include="NuGet.Protocol" Version="6.2.4" />
     <PackageReference Include="HolisticWare.Xamarin.Tools.NuGet.Client.ClientAPI" Version="0.0.1-alpha-202105172223" />
     <PackageReference Include="HolisticWare.Xamarin.Tools.GitHub" Version="0.0.1-alpha-202105162240" />
   </ItemGroup>
