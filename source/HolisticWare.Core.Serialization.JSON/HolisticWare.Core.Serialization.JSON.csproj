@@ -52,4 +52,7 @@
     <Folder Include="Core.Serialization.JSON\Options\" />
     <Folder Include="Core.IO\" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageVersion Update="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
 </Project>

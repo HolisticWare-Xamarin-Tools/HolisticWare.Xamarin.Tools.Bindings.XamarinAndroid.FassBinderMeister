@@ -6,10 +6,10 @@ using Newtonsoft.Json.Serialization;
 namespace Core.Serialization.JSON
 {
 	public static partial class
-									JSON<T>
+									    JSON<T>
 	{
 		static
-									JSON
+									    JSON
 										(
 										)
 		{
@@ -21,17 +21,17 @@ namespace Core.Serialization.JSON
 
         public static
             Func<string, T>
-                                    Deserialize;
+                                        Deserialize;
 
 
         public static
             Func<string, Settings, T>
-                                    DeserializeCustom;
+                                        DeserializeCustom;
 
 
         public static
             T
-                                    DeserializeUsingSystemTextJson
+                                        DeserializeUsingSystemTextJson
                                         (
                                             string json
                                         )
@@ -48,7 +48,7 @@ namespace Core.Serialization.JSON
 
         public static
             T
-                                    DeserializeUsingSystemTextJson
+                                        DeserializeUsingSystemTextJson
                                         (
                                             string json,
                                             Settings settings
@@ -82,7 +82,7 @@ namespace Core.Serialization.JSON
 
         public static
             T
-                                    DeserializeUsingNewtonsoftJson
+                                        DeserializeUsingNewtonsoftJson
                                         (
                                             string json
                                         )
@@ -99,7 +99,7 @@ namespace Core.Serialization.JSON
 
         public static
             T
-                                    DeserializeUsingNewtonsoftJson
+                                        DeserializeUsingNewtonsoftJson
                                         (
                                             string json,
                                             Settings settings = null
@@ -109,7 +109,8 @@ namespace Core.Serialization.JSON
 
             if (settings == null)
             {
-                DeserializeUsingNewtonsoftJson(json);            }
+                DeserializeUsingNewtonsoftJson(json);
+            }
             else
             {
                 SettingsNewtonsoftJson s = settings as SettingsNewtonsoftJson;
@@ -133,7 +134,7 @@ namespace Core.Serialization.JSON
 
         public static
             T
-                                    DeserializeUsingJil
+                                        DeserializeUsingJil
                                         (
                                             string json
                                         )
@@ -150,7 +151,7 @@ namespace Core.Serialization.JSON
 
         public static
             T
-                                    DeserializeUsingJil
+                                        DeserializeUsingJil
                                         (
                                             string json,
                                             Settings settings = null
