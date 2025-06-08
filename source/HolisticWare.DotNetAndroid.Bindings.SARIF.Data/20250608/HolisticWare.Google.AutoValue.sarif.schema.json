@@ -1,0 +1,436 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$ref": "#/definitions/HolisticWareGoogleAutoValueSarifSchema",
+    "definitions": {
+        "HolisticWareGoogleAutoValueSarifSchema": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$schema": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "http"
+                    ],
+                    "qt-uri-extensions": [
+                        ".0"
+                    ]
+                },
+                "version": {
+                    "type": "string"
+                },
+                "runs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Run"
+                    }
+                }
+            },
+            "required": [
+                "$schema",
+                "runs",
+                "version"
+            ],
+            "title": "HolisticWareGoogleAutoValueSarifSchema"
+        },
+        "Run": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "tool": {
+                    "$ref": "#/definitions/Tool"
+                },
+                "results": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Result"
+                    }
+                },
+                "rules": {
+                    "$ref": "#/definitions/Rules"
+                }
+            },
+            "required": [
+                "results",
+                "rules",
+                "tool"
+            ],
+            "title": "Run"
+        },
+        "Result": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "ruleId": {
+                    "$ref": "#/definitions/RuleID"
+                },
+                "level": {
+                    "$ref": "#/definitions/Level"
+                },
+                "message": {
+                    "type": "string"
+                },
+                "locations": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Location"
+                    }
+                },
+                "properties": {
+                    "$ref": "#/definitions/ResultProperties"
+                }
+            },
+            "required": [
+                "level",
+                "locations",
+                "message",
+                "ruleId"
+            ],
+            "title": "Result"
+        },
+        "Location": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "resultFile": {
+                    "$ref": "#/definitions/ResultFile"
+                }
+            },
+            "required": [
+                "resultFile"
+            ],
+            "title": "Location"
+        },
+        "ResultFile": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "uri": {
+                    "type": "string"
+                },
+                "region": {
+                    "$ref": "#/definitions/Region"
+                }
+            },
+            "required": [
+                "region",
+                "uri"
+            ],
+            "title": "ResultFile"
+        },
+        "Region": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "startLine": {
+                    "type": "integer"
+                },
+                "startColumn": {
+                    "type": "integer"
+                },
+                "endLine": {
+                    "type": "integer"
+                },
+                "endColumn": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "endColumn",
+                "endLine",
+                "startColumn",
+                "startLine"
+            ],
+            "title": "Region"
+        },
+        "ResultProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "warningLevel": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "warningLevel"
+            ],
+            "title": "ResultProperties"
+        },
+        "Rules": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "CS0102": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS0108": {
+                    "$ref": "#/definitions/Cs0108"
+                },
+                "CS0111": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS0114": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS0115": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS0234": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS0426": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS0505": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS0507": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS0508": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS0533": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS0534": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS0535": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS0540": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS0549": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS0618": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS0737": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS0738": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS0809": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS8764": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS8766": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "CS8768": {
+                    "$ref": "#/definitions/Cs0102"
+                },
+                "XAOBS001": {
+                    "$ref": "#/definitions/Cs0102"
+                }
+            },
+            "required": [
+                "CS0102",
+                "CS0108",
+                "CS0111",
+                "CS0114",
+                "CS0115",
+                "CS0234",
+                "CS0426",
+                "CS0505",
+                "CS0507",
+                "CS0508",
+                "CS0533",
+                "CS0534",
+                "CS0535",
+                "CS0540",
+                "CS0549",
+                "CS0618",
+                "CS0737",
+                "CS0738",
+                "CS0809",
+                "CS8764",
+                "CS8766",
+                "CS8768",
+                "XAOBS001"
+            ],
+            "title": "Rules"
+        },
+        "Cs0102": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/RuleID"
+                },
+                "defaultLevel": {
+                    "$ref": "#/definitions/Level"
+                },
+                "helpUri": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".query"
+                    ]
+                },
+                "properties": {
+                    "$ref": "#/definitions/CS0102Properties"
+                },
+                "shortDescription": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "defaultLevel",
+                "helpUri",
+                "id",
+                "properties"
+            ],
+            "title": "Cs0102"
+        },
+        "CS0102Properties": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "category": {
+                    "$ref": "#/definitions/Category"
+                },
+                "isEnabledByDefault": {
+                    "type": "boolean"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Category"
+                    }
+                }
+            },
+            "required": [
+                "category",
+                "isEnabledByDefault",
+                "tags"
+            ],
+            "title": "CS0102Properties"
+        },
+        "Cs0108": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "id": {
+                    "$ref": "#/definitions/RuleID"
+                },
+                "shortDescription": {
+                    "type": "string"
+                },
+                "fullDescription": {
+                    "type": "string"
+                },
+                "defaultLevel": {
+                    "$ref": "#/definitions/Level"
+                },
+                "helpUri": {
+                    "type": "string",
+                    "format": "uri",
+                    "qt-uri-protocols": [
+                        "https"
+                    ],
+                    "qt-uri-extensions": [
+                        ".query"
+                    ]
+                },
+                "properties": {
+                    "$ref": "#/definitions/CS0102Properties"
+                }
+            },
+            "required": [
+                "defaultLevel",
+                "fullDescription",
+                "helpUri",
+                "id",
+                "properties",
+                "shortDescription"
+            ],
+            "title": "Cs0108"
+        },
+        "Tool": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "version": {
+                    "type": "string"
+                },
+                "fileVersion": {
+                    "type": "string"
+                },
+                "semanticVersion": {
+                    "type": "string"
+                },
+                "language": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "fileVersion",
+                "language",
+                "name",
+                "semanticVersion",
+                "version"
+            ],
+            "title": "Tool"
+        },
+        "Level": {
+            "type": "string",
+            "enum": [
+                "warning",
+                "error"
+            ],
+            "title": "Level"
+        },
+        "RuleID": {
+            "type": "string",
+            "enum": [
+                "XAOBS001",
+                "CS0114",
+                "CS0108",
+                "CS0535",
+                "CS8766",
+                "CS8764",
+                "CS0533",
+                "CS0115",
+                "CS0505",
+                "CS0534",
+                "CS0102",
+                "CS0738",
+                "CS0111",
+                "CS0540",
+                "CS0618",
+                "CS0508",
+                "CS0426",
+                "CS8768",
+                "CS0809",
+                "CS0737",
+                "CS0507",
+                "CS0549",
+                "CS0234"
+            ],
+            "title": "RuleID"
+        },
+        "Category": {
+            "type": "string",
+            "enum": [
+                "Compiler",
+                "Telemetry",
+                "NotConfigurable",
+                "CustomObsolete"
+            ],
+            "title": "Category"
+        }
+    }
+}
